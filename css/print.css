@@ -1,0 +1,267 @@
+/* ==========================================================================
+   SYED HAMZA — DEDICATED A4 PRINT & PDF EXPORT STYLESHEET
+   Target: Standard A4 Portrait (210mm x 297mm)
+   Elite Executive CV Format
+   ========================================================================== */
+
+@page {
+  size: A4 portrait;
+  margin: 12mm 14mm 12mm 14mm;
+}
+
+@media print {
+  /* ------------------------------------------------------------------------
+     1. Global Print Resets
+     ------------------------------------------------------------------------ */
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #111827 !important; /* Deep dark slate ink */
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html, body {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    font-size: 11.5px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     2. Suppress Screen Chrome, Rails, Sidebars & Buttons
+     ------------------------------------------------------------------------ */
+  .left-rail,
+  .profile-sidebar,
+  .main-top-bar,
+  .no-print,
+  #action-toast,
+  .explore-full-dark-card,
+  .closing-quote-bar,
+  .profile-photo-card,
+  .btn-card-dark,
+  .btn-top-primary,
+  .btn-top-secondary {
+    display: none !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     3. App Shell Geometry for Print
+     ------------------------------------------------------------------------ */
+  .app-shell {
+    display: block !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .main-content-card {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    gap: 14px !important;
+    background: #ffffff !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     4. Header & Identity
+     ------------------------------------------------------------------------ */
+  .overview-hero-grid {
+    display: block !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 8px !important;
+    border-bottom: 1.5pt solid #111827 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .hero-candidate-name {
+    font-size: 1.85rem !important;
+    font-weight: 800 !important;
+    color: #000000 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .hero-primary-title {
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: #1f2937 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .hero-positioning-line {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #4b5563 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .hero-summary-paragraph {
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+    color: #1f2937 !important;
+  }
+
+  /* Contact Strip */
+  .contact-pills-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    margin: 8px 0 !important;
+  }
+
+  .contact-pill {
+    background: transparent !important;
+    border: 0.5pt solid #d1d5db !important;
+    padding: 2px 8px !important;
+    font-size: 0.74rem !important;
+    color: #111827 !important;
+  }
+
+  .contact-pill svg {
+    display: none !important;
+  }
+
+  /* Snapshot Metrics */
+  .snapshot-cards-row {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .snapshot-card {
+    background: #f9fafb !important;
+    border: 0.5pt solid #e5e7eb !important;
+    padding: 6px 10px !important;
+    border-radius: 4px !important;
+  }
+
+  .snapshot-icon-box {
+    display: none !important;
+  }
+
+  .snapshot-value {
+    font-size: 1rem !important;
+    color: #000000 !important;
+  }
+
+  .snapshot-label {
+    font-size: 0.68rem !important;
+  }
+
+  .snapshot-sub {
+    font-size: 0.62rem !important;
+  }
+
+  /* Overview Trio Grid (Core Expertise + Featured Project) */
+  .overview-trio-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .dashboard-box,
+  .featured-project-box {
+    background: #ffffff !important;
+    border: 0.75pt solid #e5e7eb !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+  }
+
+  .box-title,
+  .featured-proj-name {
+    font-size: 0.90rem !important;
+    color: #000000 !important;
+  }
+
+  .expertise-chip {
+    background: #f3f4f6 !important;
+    border: 0.5pt solid #d1d5db !important;
+    font-size: 0.70rem !important;
+    padding: 1px 6px !important;
+  }
+
+  .featured-proj-bullets li {
+    font-size: 0.76rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* AI Engineering Depth Card in Print */
+  .ai-engineering-depth-card {
+    background: #ffffff !important;
+    border: 0.75pt solid #e5e7eb !important;
+    border-radius: 6px !important;
+    padding: 12px 14px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-top: 10px !important;
+  }
+
+  .ai-depth-title {
+    font-size: 0.95rem !important;
+    color: #000000 !important;
+  }
+
+  .ai-depth-sub {
+    font-size: 0.78rem !important;
+    color: #374151 !important;
+  }
+
+  .ai-hours-stat-badge {
+    background: #f9fafb !important;
+    border: 0.5pt solid #d1d5db !important;
+    padding: 4px 8px !important;
+  }
+
+  .ai-hours-stat {
+    font-size: 1.05rem !important;
+    color: #000000 !important;
+  }
+
+  .ai-depth-desc {
+    font-size: 0.78rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .ai-capabilities-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .ai-cap-group {
+    background: #f9fafb !important;
+    border: 0.5pt solid #e5e7eb !important;
+    padding: 6px 8px !important;
+  }
+
+  .ai-cap-title {
+    font-size: 0.76rem !important;
+    color: #000000 !important;
+  }
+
+  .ai-cap-tag {
+    background: #ffffff !important;
+    border: 0.5pt solid #d1d5db !important;
+    font-size: 0.68rem !important;
+    padding: 1px 4px !important;
+  }
+
+  .ai-credibility-note {
+    font-size: 0.68rem !important;
+    color: #6b7280 !important;
+  }
+}

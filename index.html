@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Syed Hamza — Electronics & Communication Engineer | Professional Resume OS</title>
+  
+  <!-- SEO & Social Open Graph -->
+  <meta name="title" content="Syed Hamza — Electronics & Communication Engineer">
+  <meta name="description" content="Executive desktop resume system for Syed Hamza. Electronics & Communication Engineer specialized in AI integration, full-stack web architectures, and digital product engineering.">
+  <meta name="keywords" content="Syed Hamza, Electronics & Communication Engineer, AI Engineer, Full-Stack Developer, Next.js, React, TypeScript, Software Engineer">
+  <meta name="author" content="Syed Hamza">
+  
+  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/skills-deep-dive.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f131a'/><text x='50%' y='62%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='52' font-weight='800' fill='%23c29538'>SH</text></svg>">
+</head>
+<body>
+
+  <!-- ========================================================================
+       MOBILE STICKY TOP HEADER (Visible only on mobile <= 900px)
+       ======================================================================== -->
+  <header class="mobile-top-header no-print">
+    <div class="mobile-brand-group" id="mobile-profile-toggle" title="Open Profile Details">
+      <div class="mobile-avatar-thumb">
+        <img src="assets/profile.jpg" alt="Syed Hamza" />
+      </div>
+      <div class="mobile-brand-info">
+        <div class="mobile-brand-name">
+          <span>Syed Hamza</span>
+          <span class="sidebar-verified-badge">✓</span>
+        </div>
+        <span class="mobile-brand-title">B.E. ECE • Full-Stack & AI</span>
+      </div>
+    </div>
+
+    <div class="mobile-header-actions">
+      <button class="mobile-action-btn" id="mobile-share-btn" title="Share Resume">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+      </button>
+      <button class="mobile-action-btn mobile-menu-btn" id="mobile-drawer-toggle" title="Open Navigation Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE HORIZONTAL NAVIGATION PILL STRIP -->
+  <nav class="mobile-pill-strip no-print" aria-label="Mobile Navigation Pill Strip">
+    <button class="m-pill active" data-mnav="overview">🏠 Overview</button>
+    <button class="m-pill" data-mnav="skills">⚡ Skills</button>
+    <button class="m-pill" data-mnav="projects">💼 Projects</button>
+    <button class="m-pill" data-mnav="experience">🏢 Experience</button>
+    <button class="m-pill" data-mnav="education">🎓 Education</button>
+    <button class="m-pill" data-mnav="engineering">🔬 Deep Dive</button>
+    <button class="m-pill" data-mnav="agents">🤖 AI Agents</button>
+    <button class="m-pill" data-mnav="achievements">🏆 Highlights</button>
+    <button class="m-pill" data-mnav="contact">✉ Contact</button>
+  </nav>
+
+  <!-- MOBILE BACKDROP OVERLAY FOR SLIDE-OVER DRAWER -->
+  <div class="sidebar-backdrop no-print" id="sidebar-backdrop"></div>
+
+  <!-- ========================================================================
+       3-COLUMN DESKTOP APP SHELL (Left Rail + Profile Sidebar + Main Content)
+       ======================================================================== -->
+  <div class="app-shell">
+
+    <!-- ----------------------------------------------------------------------
+         COLUMN 1: LEFT VERTICAL RAIL (Slim Icon Navigation)
+         ---------------------------------------------------------------------- -->
+    <aside class="left-rail no-print" aria-label="Quick App Rail">
+      <div class="rail-top-logo" title="Syed Hamza Professional OS">✱</div>
+
+      <div class="rail-icons-list">
+        <!-- 1. Overview -->
+        <button class="rail-btn active" data-rail="overview" title="Overview">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </button>
+
+        <!-- 2. Skills -->
+        <button class="rail-btn" data-rail="skills" title="Technical Skills">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+        </button>
+
+        <!-- 3. Projects -->
+        <button class="rail-btn" data-rail="projects" title="Projects">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        </button>
+
+        <!-- 4. Experience -->
+        <button class="rail-btn" data-rail="experience" title="Experience">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+
+        <!-- 5. Education -->
+        <button class="rail-btn" data-rail="education" title="Education">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+        </button>
+
+        <!-- 6. Engineering Depth -->
+        <button class="rail-btn" data-rail="engineering" title="Engineering Depth">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        </button>
+
+        <!-- 7. AI Agents -->
+        <button class="rail-btn" data-rail="agents" title="AI Agents Studio">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path><rect x="4" y="8" width="16" height="12" rx="3"></rect><circle cx="9" cy="13" r="1.5" fill="currentColor"></circle><circle cx="15" cy="13" r="1.5" fill="currentColor"></circle><path d="M9 17h6"></path><path d="M2 14h2"></path><path d="M20 14h2"></path></svg>
+        </button>
+
+        <!-- 8. Achievements -->
+        <button class="rail-btn" data-rail="achievements" title="Achievements">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        </button>
+
+        <!-- 9. Contact -->
+        <button class="rail-btn" data-rail="contact" title="Contact">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </button>
+      </div>
+
+      <div class="rail-bottom-group">
+        <div class="rail-vertical-text">SYED HAMZA • 2025</div>
+        <button class="rail-settings-btn" title="Settings">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ----------------------------------------------------------------------
+         COLUMN 2: PROFILE SIDEBAR (Resume Navigation)
+         ---------------------------------------------------------------------- -->
+    <aside class="profile-sidebar no-print" id="profile-sidebar" aria-label="Profile and Resume Navigation">
+      <div>
+        <div class="sidebar-header-card">
+          <div class="sidebar-top-meta">
+            <div class="sidebar-avatar-wrapper" style="position:relative;">
+              <div class="sidebar-avatar">
+                <img src="assets/profile.jpg" alt="Syed Hamza" />
+              </div>
+              <span class="status-dot-green" style="position:absolute; bottom:2px; right:2px; border:2px solid #ffffff;"></span>
+            </div>
+            <button class="sidebar-close-btn no-print" id="sidebar-close-btn" title="Close Menu">&times;</button>
+          </div>
+          
+          <div>
+            <div class="sidebar-name-row">
+              <span class="sidebar-name">Syed Hamza</span>
+              <span class="sidebar-verified-badge" title="Verified Profile">✓</span>
+            </div>
+            <div class="sidebar-title">Electronics & Communication Engineer</div>
+            <div class="sidebar-subtitle">B.E. 2024 • AI & Full-Stack Systems</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section-heading">RESUME SECTIONS</div>
+
+        <nav class="sidebar-nav-list" aria-label="Resume Sections">
+          <!-- 1. Overview -->
+          <button class="nav-item-card active" data-nav="overview">
+            <div class="nav-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </div>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Overview</span>
+              <span class="nav-item-desc">Professional Summary</span>
+            </div>
+          </button>
+
+          <!-- 2. Skills -->
+          <button class="nav-item-card" data-nav="skills">
+            <div class="nav-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            </div>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Skills</span>
+              <span class="nav-item-desc">Technical Expertise</span>
+            </div>
+          </button>
+
+          <!-- 3. Projects -->
+          <button class="nav-item-card" data-nav="projects">
+            <div class="nav-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Projects</span>
+              <span class="nav-item-desc">Selected Work</span>
+            </div>
+          </button>
+
+          <!-- 4. Experience -->
+          <button class="nav-item-card" data-nav="experience">
+            <div class="nav-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Experience</span>
+              <span class="nav-item-desc">Work & Contributions</span>
+            </div>
+          </button>
+
+          <!-- 5. Education -->
+          <button class="nav-item-card" data-nav="education">
+            <div class="nav-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </div>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Education</span>
+              <span class="nav-item-desc">Academic Background</span>
+            </div>
+          </button>
+
+          <!-- 6. Engineering Depth -->
+          <button class="nav-item-card" data-nav="engineering">
+            <div class="nav-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Engineering Depth</span>
+              <span class="nav-item-desc">Technical Deep Dive</span>
+            </div>
+          </button>
+
+          <!-- 7. AI Agents -->
+          <button class="nav-item-card" data-nav="agents">
+            <div class="nav-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path><rect x="4" y="8" width="16" height="12" rx="3"></rect><circle cx="9" cy="13" r="1.5" fill="currentColor"></circle><circle cx="15" cy="13" r="1.5" fill="currentColor"></circle><path d="M9 17h6"></path><path d="M2 14h2"></path><path d="M20 14h2"></path></svg>
+            </div>
+            <div class="nav-item-text">
+              <span class="nav-item-title">AI Agents</span>
+              <span class="nav-item-desc">Autonomous Systems Hub</span>
+            </div>
+          </button>
+
+          <!-- 8. Achievements -->
+          <button class="nav-item-card" data-nav="achievements">
+            <div class="nav-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            </div>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Achievements</span>
+              <span class="nav-item-desc">Key Highlights</span>
+            </div>
+          </button>
+
+          <!-- 8. Contact -->
+          <button class="nav-item-card" data-nav="contact">
+            <div class="nav-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Contact</span>
+              <span class="nav-item-desc">Get In Touch</span>
+            </div>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Sidebar Bottom Action Area -->
+      <div class="sidebar-bottom-actions">
+        <div class="sidebar-section-heading" style="margin:0 0 4px 4px;">SHARE PROFILE</div>
+        <div class="action-btn-row">
+          <button class="btn-sidebar-dark" id="sidebar-share-btn" style="width:100%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            <span>Share Resume OS</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ----------------------------------------------------------------------
+         COLUMN 3: MAIN RESUME CONTENT CONTAINER (Dynamically Rendered via SPA)
+         ---------------------------------------------------------------------- -->
+    <main class="main-content-card" id="main-content-container" role="main">
+      <!-- Dynamically populated by js/app.js according to URL hash -->
+    </main>
+
+  </div>
+
+  <!-- ========================================================================
+       MOBILE FLOATING BOTTOM QUICK DOCK (Visible only on mobile <= 900px)
+       ======================================================================== -->
+  <nav class="mobile-bottom-dock no-print" aria-label="Mobile Bottom Navigation">
+    <button class="m-dock-item active" data-mdock="overview">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      <span>Overview</span>
+    </button>
+    <button class="m-dock-item" data-mdock="skills">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+      <span>Skills</span>
+    </button>
+    <button class="m-dock-item" data-mdock="projects">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+      <span>Projects</span>
+    </button>
+    <button class="m-dock-item" data-mdock="engineering">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+      <span>Deep Dive</span>
+    </button>
+    <button class="m-dock-item" data-mdock="contact">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      <span>Contact</span>
+    </button>
+  </nav>
+
+  <!-- Toast Notification Element -->
+  <div id="action-toast" style="position:fixed; bottom:84px; left:50%; transform:translateX(-50%) translateY(100px); background:#0f131a; color:#ffffff; padding:10px 22px; border-radius:9999px; font-size:0.82rem; font-weight:600; box-shadow:0 10px 30px rgba(0,0,0,0.3); opacity:0; transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1); z-index:9999; pointer-events:none;">
+    Notification
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/skills-data.js"></script>
+  <script src="js/skills-modal.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
