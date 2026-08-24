@@ -54,19 +54,6 @@
     </div>
   </header>
 
-  <!-- MOBILE HORIZONTAL NAVIGATION PILL STRIP -->
-  <nav class="mobile-pill-strip no-print" aria-label="Mobile Navigation Pill Strip">
-    <button class="m-pill active" data-mnav="overview">🏠 Overview</button>
-    <button class="m-pill" data-mnav="skills">⚡ Skills</button>
-    <button class="m-pill" data-mnav="projects">💼 Projects</button>
-    <button class="m-pill" data-mnav="experience">🏢 Experience</button>
-    <button class="m-pill" data-mnav="education">🎓 Education</button>
-    <button class="m-pill" data-mnav="engineering">🔬 Deep Dive</button>
-    <button class="m-pill" data-mnav="agents">🤖 AI Agents</button>
-    <button class="m-pill" data-mnav="achievements">🏆 Highlights</button>
-    <button class="m-pill" data-mnav="contact">✉ Contact</button>
-  </nav>
-
   <!-- MOBILE BACKDROP OVERLAY FOR SLIDE-OVER DRAWER -->
   <div class="sidebar-backdrop no-print" id="sidebar-backdrop"></div>
 
@@ -291,23 +278,56 @@
        MOBILE FLOATING BOTTOM QUICK DOCK (Visible only on mobile <= 900px)
        ======================================================================== -->
   <nav class="mobile-bottom-dock no-print" aria-label="Mobile Bottom Navigation">
-    <button class="m-dock-item active" data-mdock="overview">
+    <!-- 1. Overview -->
+    <button class="m-dock-item active" data-mdock="overview" title="Overview">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
       <span>Overview</span>
     </button>
-    <button class="m-dock-item" data-mdock="skills">
+
+    <!-- 2. Skills -->
+    <button class="m-dock-item" data-mdock="skills" title="Skills">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
       <span>Skills</span>
     </button>
-    <button class="m-dock-item" data-mdock="projects">
+
+    <!-- 3. Projects -->
+    <button class="m-dock-item" data-mdock="projects" title="Projects">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
       <span>Projects</span>
     </button>
-    <button class="m-dock-item" data-mdock="engineering">
+
+    <!-- 4. Experience -->
+    <button class="m-dock-item" data-mdock="experience" title="Experience">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      <span>Experience</span>
+    </button>
+
+    <!-- 5. Education -->
+    <button class="m-dock-item" data-mdock="education" title="Education">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+      <span>Education</span>
+    </button>
+
+    <!-- 6. Deep Dive -->
+    <button class="m-dock-item" data-mdock="engineering" title="Deep Dive">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
       <span>Deep Dive</span>
     </button>
-    <button class="m-dock-item" data-mdock="contact">
+
+    <!-- 7. AI Agents -->
+    <button class="m-dock-item" data-mdock="agents" title="AI Agents">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path><rect x="4" y="8" width="16" height="12" rx="3"></rect><circle cx="9" cy="13" r="1.5" fill="currentColor"></circle><circle cx="15" cy="13" r="1.5" fill="currentColor"></circle><path d="M9 17h6"></path><path d="M2 14h2"></path><path d="M20 14h2"></path></svg>
+      <span>AI Agents</span>
+    </button>
+
+    <!-- 8. Highlights -->
+    <button class="m-dock-item" data-mdock="achievements" title="Highlights">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+      <span>Highlights</span>
+    </button>
+
+    <!-- 9. Contact -->
+    <button class="m-dock-item" data-mdock="contact" title="Contact">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
       <span>Contact</span>
     </button>

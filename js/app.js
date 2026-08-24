@@ -23,16 +23,16 @@
     },
 
     contact: {
-      phone: '+91 9XXXXXXXXX',
-      phoneLink: 'tel:+919876543210',
-      email: 'hamza@email.com',
-      emailLink: 'mailto:hamza.ece.dev@gmail.com',
+      phone: '+91 7975463051',
+      phoneLink: 'tel:+917975463051',
+      email: 'syedhamza1238@gmail.com',
+      emailLink: 'mailto:syedhamza1238@gmail.com',
       location: 'Bengaluru, India',
       locationLink: '#',
-      linkedin: 'linkedin.com/in/syedhamza',
-      linkedinLink: 'https://linkedin.com/in/syedhamza-eng',
-      website: 'syedhamza.com',
-      websiteLink: 'https://hamzadev.pro'
+      linkedin: 'linkedin.com/in/syed-hamza-955562229',
+      linkedinLink: 'https://www.linkedin.com/in/syed-hamza-955562229/',
+      website: 'syedhamza.in',
+      websiteLink: 'https://syedhamza.in'
     },
 
     snapshot: [
@@ -360,6 +360,7 @@
       const target = dockItem.getAttribute('data-mdock');
       if (target === sectionKey || (sectionKey === '' && target === 'overview')) {
         dockItem.classList.add('active');
+        dockItem.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
       } else {
         dockItem.classList.remove('active');
       }
@@ -1495,11 +1496,16 @@ export async function POST(req: Request) {
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 <span>${resumeData.contact.linkedin}</span>
               </a>
+              <a href="${resumeData.contact.websiteLink}" target="_blank" rel="noopener noreferrer" class="contact-pill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span>${resumeData.contact.website}</span>
+              </a>
             </div>
 
             <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;">
               <a href="${resumeData.contact.emailLink}" class="btn-top-primary">Email Syed Hamza →</a>
               <a href="${resumeData.contact.linkedinLink}" target="_blank" class="btn-top-secondary">Connect on LinkedIn ↗</a>
+              <a href="${resumeData.contact.websiteLink}" target="_blank" class="btn-top-secondary">Visit Portfolio ↗</a>
             </div>
           </div>
         </div>
