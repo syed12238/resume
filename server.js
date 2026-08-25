@@ -1,8 +1,6 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-
-const PORT = process.env.PORT || 3000;
 const ROOT_DIR = __dirname;
 
 const MIME_TYPES = {
@@ -69,6 +67,39 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}/`);
-});
+const os = require('os');
+
+function getLocalIp() {
+  const interfaces = os.networkInterfaces();
+  for (const name of Object.keys(interfaces)) {
+    for (const iface of interfaces[name]) {
+      if (iface.family === 'IPv4' && !iface.internal) {
+        return iface.address;
+      }
+    }
+  }
+  return 'localhost';
+}
+
+function startServer(port) {
+  server.listen(port, () => {
+    const localIp = getLocalIp();
+    console.log('\n======================================================');
+    console.log(`  🚀 Resume OS Server Running!`);
+    console.log(`  👉 Localhost: http://localhost:${port}/`);
+    console.log(`  👉 Network:   http://${localIp}:${port}/`);
+    console.log('======================================================\n');
+  });
+
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.log(`⚠️  Port ${port} is in use (by your other app). Trying port ${port + 1}...`);
+      startServer(port + 1);
+    } else {
+      console.error('Server error:', err);
+    }
+  });
+}
+
+const DEFAULT_PORT = parseInt(process.env.PORT || '3001', 10);
+startServer(DEFAULT_PORT);

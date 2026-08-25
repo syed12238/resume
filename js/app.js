@@ -15,11 +15,11 @@
       name: 'SYED HAMZA',
       verified: true,
       title: 'Electronics & Communication Engineer',
-      positioning: 'AI • Full-Stack Development • Digital Product Engineering',
+      positioning: 'AI-Native Full-Stack Builder • Product & Systems Engineer',
       status: 'Open to Opportunities',
       avatarText: 'SH',
       photoUrl: 'assets/profile.jpg',
-      summary: 'Electronics & Communication Engineer focused on building AI-powered digital products, full-stack applications, and technically sophisticated web experiences. Combining engineering fundamentals with modern software architecture, AI integration, and product design.'
+      summary: 'Electronics & Communication Engineer and AI-native product builder focused on designing, architecting, and shipping complete digital products. I combine product thinking and full-stack system design with AI-augmented engineering workflows — accelerating implementation, code generation, and iterative debugging while personally directing system architecture, API contracts, database design, UX finesse, and final production quality.'
     },
 
     contact: {
@@ -37,53 +37,101 @@
 
     snapshot: [
       {
-        label: 'Projects Completed',
+        label: 'Products Shipped',
         value: '15+',
-        sub: 'Across domains',
+        sub: 'Working Systems',
         icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>'
       },
       {
-        label: 'Years of Experience',
+        label: 'Engineering Practice',
         value: '3+',
-        sub: 'Engineering & Development',
+        sub: 'Years Applied Building',
         icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>'
       },
       {
-        label: 'Technologies',
+        label: 'Tech Ecosystem',
         value: '20+',
-        sub: 'Modern Tech Stack',
+        sub: 'Applied Technologies',
         icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>'
       },
       {
-        label: 'Problem Solver',
+        label: 'Delivery Focus',
         value: '100%',
-        sub: 'Client Satisfaction',
+        sub: 'Production Ownership',
         icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 6 12 12 16 14"></polygon></svg>'
       }
     ],
 
     coreExpertise: [
-      'AI Integration',
-      'Full-Stack Development',
-      'Web Engineering',
-      'Backend Development',
-      'API Design',
+      'AI-Native Engineering',
+      'Full-Stack Architecture',
+      'System Design',
+      'AI & LLM Integration',
+      'Product Engineering',
+      'API & Schema Design',
       'Database Architecture',
       'UI/UX Engineering',
-      'System Design',
-      'Problem Solving',
-      'Product Engineering'
+      'Technical Problem Solving',
+      'Rapid Prototyping'
     ],
 
+    aiNativeEngineering: {
+      badge: 'CORE ENGINEERING CAPABILITY',
+      title: 'AI-Native Engineering',
+      description: 'Building production-oriented digital products through AI-augmented engineering workflows — combining product architecture, system design, prompt engineering, implementation direction, debugging, integration, testing, and deployment.',
+      pillars: [
+        {
+          title: 'AI-Assisted Code Generation',
+          desc: 'Directing LLMs for rapid full-stack scaffolding, component generation, and boilerplate elimination.',
+          icon: '⚡'
+        },
+        {
+          title: 'Prompt & Spec Engineering',
+          desc: 'Authoring rigorous specifications, XML schemas, few-shot constraints, and deterministic pipelines.',
+          icon: '📝'
+        },
+        {
+          title: 'Architecture-First Development',
+          desc: 'Designing modular component hierarchies, relational schemas, and API contracts before code generation.',
+          icon: '📐'
+        },
+        {
+          title: 'Rapid Prototyping & Iteration',
+          desc: 'High-velocity feature exploration, interactive UI sandboxes, and accelerated time-to-delivery.',
+          icon: '🚀'
+        },
+        {
+          title: 'AI-Assisted Debugging & Refactoring',
+          desc: 'Diagnosing complex syntax anomalies, performance bottlenecks, and AST refactoring with AI assistance.',
+          icon: '🔍'
+        },
+        {
+          title: 'Full-Stack Integration & APIs',
+          desc: 'Integrating Supabase PostgreSQL, OAuth/JWT auth, REST/SSE streaming APIs, and third-party services.',
+          icon: '🔌'
+        },
+        {
+          title: 'UX, Accessibility & Performance',
+          desc: 'Refining responsive design, WCAG AAA accessibility contrast, Core Web Vitals, and Edge deployments.',
+          icon: '🎨'
+        },
+        {
+          title: 'Human-Led Technical Validation',
+          desc: 'Personally making critical design trade-offs, architecture validation, debugging, and final quality control.',
+          icon: '🛡️'
+        }
+      ]
+    },
+
     featuredProject: {
-      name: 'Auralis Studio',
-      link: 'https://your-domain.com/cv',
-      description: 'AI-powered digital experience platform for premium brands.',
+      name: 'ORBA Social Platform',
+      link: 'https://orba.syedhamza.in/',
+      description: 'Real-time social media platform where conversations orbit people, featuring live activity feeds, interactive user profile orbits, and OAuth 2.0 PKCE authentication with Supabase.',
       highlights: [
-        'Built with Next.js, TypeScript, Supabase, AI APIs',
-        'Modular architecture with scalable backend',
-        'AI-driven automation and intelligent workflows',
-        'Deployed on Vercel with global performance'
+        'Built with Next.js App Router, TypeScript, Tailwind CSS',
+        'Supabase PostgreSQL with Row-Level Security (RLS)',
+        'Sub-25ms Real-Time WebSocket state synchronization',
+        'OAuth 2.0 PKCE zero-trust authentication & Vercel deployment'
       ]
     },
 
@@ -91,49 +139,61 @@
 
     skills: [
       {
-        category: 'AI & Intelligent Systems',
+        category: 'AI & Intelligent Systems (AI-Assisted • Strong)',
+        tier: 'AI-Assisted Implementation',
+        level: 'Strong',
         items: ['LLM Integration', 'Prompt Engineering', 'AI Application Development', 'AI Workflows', 'Vector DB', 'Claude & OpenAI APIs']
       },
       {
-        category: 'Frontend Engineering',
+        category: 'Frontend Engineering (AI-Assisted • Strong)',
+        tier: 'AI-Assisted Implementation',
+        level: 'Strong',
         items: ['React', 'Next.js 14+', 'TypeScript', 'Modern JavaScript', 'HTML5', 'CSS3', 'Responsive Architecture', 'Animation Systems', 'Tailwind']
       },
       {
-        category: 'Backend Engineering',
+        category: 'Backend Engineering (Applied / Working)',
+        tier: 'Hands-on Development',
+        level: 'Applied / Working',
         items: ['Node.js', 'Express', 'REST APIs', 'Authentication (JWT/OAuth)', 'Server-side Architecture', 'Middleware']
       },
       {
-        category: 'Databases',
+        category: 'Databases & Schemas (Applied / Working)',
+        tier: 'Hands-on Development',
+        level: 'Applied / Working',
         items: ['Supabase', 'PostgreSQL', 'Relational Schema Design', 'Row-Level Security (RLS)', 'SQL Optimization']
       },
       {
-        category: 'Infrastructure',
+        category: 'Infrastructure & Tools (Familiar / Working)',
+        tier: 'Technology Familiarity',
+        level: 'Familiar / Working',
         items: ['Vercel Edge', 'Docker', 'Git / GitHub CI/CD', 'Linux / WSL', 'Postman']
       },
       {
-        category: 'Engineering Fundamentals',
+        category: 'Engineering & Architecture (Architecture • Strong)',
+        tier: 'Architecture & Product',
+        level: 'Strong',
         items: ['System Design', 'API Architecture', 'Problem Solving', 'Product Engineering', 'Embedded C/C++', 'Signal Processing']
       }
     ],
 
     projects: [
       {
-        id: 'auralis',
-        name: 'Auralis Studio',
-        category: 'AI Platform & Web Experience',
-        year: '2024',
-        role: 'Product Designer • Full-Stack Developer',
-        description: 'AI-powered generative digital experience platform featuring sub-second streaming token ingestion, Supabase PostgreSQL with RLS, and automated Edge deployment on Vercel.',
-        tags: ['React', 'Next.js', 'TypeScript', 'AI APIs', 'Supabase', 'Vercel']
-      },
-      {
         id: 'orba',
         name: 'ORBA Social Platform',
         category: 'Real-Time Social Network',
         year: '2024 – 2025',
-        role: 'Creator & Full-Stack Architect',
-        description: 'Next-generation real-time social media platform where conversations orbit people, featuring live activity feeds, user profile orbits, and OAuth 2.0 PKCE authentication with Supabase.',
+        role: 'Creator & Full-Stack Builder (AI-Native Workflow)',
+        description: 'Real-time social media platform where conversations orbit people, featuring live activity feeds, user profile orbits, and OAuth 2.0 PKCE authentication with Supabase.',
         tags: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'OAuth PKCE', 'WebSockets']
+      },
+      {
+        id: 'auralis',
+        name: 'Auralis Studio',
+        category: 'AI Platform & Web Experience',
+        year: '2024 – 2025',
+        role: 'Architect & Full-Stack Builder (AI-Native Workflow)',
+        description: 'AI-powered generative digital experience platform featuring streaming token ingestion, Supabase PostgreSQL with RLS, and automated Edge deployment on Vercel.',
+        tags: ['React', 'Next.js', 'TypeScript', 'AI APIs', 'Supabase', 'Vercel']
       },
       {
         id: 'neuralforge',
@@ -141,7 +201,7 @@
         category: 'Workflow Engine & Developer Tools',
         year: '2024',
         role: 'Full-Stack & Systems Engineer',
-        description: 'Multi-agent developer workflow engine and operational dashboard coordinating autonomous task graphs with in-memory semantic vector cache.',
+        description: 'Developer workflow engine and operational dashboard coordinating task graphs with in-memory semantic vector cache and AI integrations.',
         tags: ['Next.js', 'TypeScript', 'Node.js', 'Vector DB', 'REST APIs', 'WebSockets']
       },
       {
@@ -150,50 +210,50 @@
         category: 'Embedded Hardware & Cloud Telemetry',
         year: '2024',
         role: 'Electronics & Software Integration Engineer',
-        description: 'High-frequency 1kHz ADC sensor sampling loop in C++ transmitting compressed binary frames over WebSockets into a real-time 60FPS HTML5 Canvas oscilloscope.',
+        description: 'Microcontroller sensor sampling loop in C++ transmitting data over WebSockets into a real-time 60FPS HTML5 Canvas oscilloscope interface.',
         tags: ['C++', 'Embedded C', 'Node.js', 'WebSockets', 'Digital Electronics', 'Canvas API']
       }
     ],
 
     aiExperience: {
-      eyebrow: "AI ENGINEERING & CREATIVE TECHNOLOGY",
+      eyebrow: "AI-NATIVE ENGINEERING & SYSTEMS WORKFLOW",
       title: "2+ Years of Intensive Hands-On Practice",
       hours: "~4,500–5,000",
       hoursBadge: "~4.5K–5K",
       subtitle: "~4,500–5,000 hours across AI-assisted engineering, software development, creative technology, and digital product building.",
-      description: "Built and experimented extensively with modern AI tools and models as part of an end-to-end engineering workflow — spanning software architecture, full-stack development, frontend systems, backend engineering, UI/UX, visual design, automation, research, debugging, prototyping, and digital product development.",
+      description: "Extensive hands-on practice using AI tools and models as an engineering force multiplier across the entire product lifecycle — spanning system architecture, prompt engineering, full-stack development, database schema design, UI/UX, debugging, rapid iteration, and production deployment.",
       capabilities: [
         {
-          category: "AI & Intelligent Systems",
-          items: ["LLM Integration", "Prompt Engineering", "AI Workflows", "AI-Assisted Development", "Model Evaluation", "Research & Experimentation"]
+          category: "AI-Native Engineering",
+          items: ["AI-Assisted Code Generation", "Prompt Engineering", "AI Workflows", "Architecture-First Design", "Rapid Prototyping", "AI Debugging & Refactoring"]
         },
         {
-          category: "Full-Stack Engineering",
-          items: ["Frontend Architecture", "Backend Systems", "REST APIs", "Authentication", "Database Architecture", "Deployment"]
+          category: "Full-Stack Systems",
+          items: ["Frontend Architecture", "Backend Systems", "REST APIs", "Authentication", "Database Architecture", "Edge Deployment"]
         },
         {
-          category: "Creative Technology",
-          items: ["UI/UX Engineering", "Visual Design", "Interactive Experiences", "Motion & Animation", "Design Systems", "Digital Products"]
+          category: "Product & UI/UX",
+          items: ["UI/UX Engineering", "Visual Design", "Interactive Experiences", "Motion & Animation", "Design Systems", "Product Strategy"]
         },
         {
           category: "Engineering Workflow",
-          items: ["Rapid Prototyping", "Debugging", "Architecture Exploration", "Technical Research", "Automation", "Problem Solving"]
+          items: ["Rapid Prototyping", "Edge-Case Debugging", "Architecture Exploration", "Integration Testing", "Automation", "Technical Problem Solving"]
         }
       ],
-      credibilityNote: "Approximate cumulative hands-on practice across personal projects, client work, experimentation, development, research, and AI-assisted workflows."
+      credibilityNote: "Approximate cumulative hands-on practice across personal projects, client engagements, product experimentation, development, and AI-assisted workflows."
     },
 
     experience: [
       {
-        role: 'Independent Software & AI Engineer',
+        role: 'Independent AI-Native Software & Product Builder',
         organization: 'Self-Directed & Client Engagements',
         location: 'Remote / Global',
         period: '2023 – Present',
-        description: 'Spearheaded end-to-end architecture and implementation of scalable web applications and AI-augmented tools for clients and independent initiatives.',
+        description: 'Designed, architected, directed, integrated, debugged, and shipped scalable web applications and AI-augmented tools for clients and independent initiatives.',
         responsibilities: [
-          'Built production-ready full-stack systems using Next.js, React, Node.js, and Supabase with end-to-end type safety.',
-          'Integrated state-of-the-art LLM APIs and prompt pipelines to automate unstructured data workflows.',
-          'Maintained rigorous engineering practices: automated CI/CD on Vercel and modular architecture.'
+          'Architected and shipped production-ready full-stack applications using Next.js, React, Node.js, and Supabase via AI-augmented engineering workflows.',
+          'Directed end-to-end integration of LLM APIs, streaming pipelines, structured JSON schemas, and stateful database layers.',
+          'Maintained high engineering standards: designed modular system architecture, verified type safety, debugged edge cases, and automated CI/CD deployments on Vercel.'
         ]
       },
       {
@@ -201,9 +261,9 @@
         organization: 'Ghousia College of Engineering (Capstone Engineering)',
         location: 'Karnataka, India',
         period: '2023 – 2024',
-        description: 'Directed capstone engineering projects spanning embedded systems, signal communication, and software interfaces.',
+        description: 'Led and directed capstone engineering project spanning embedded hardware, signal communication, and real-time web telemetry visualizers.',
         responsibilities: [
-          'Programmed microcontroller sensor sampling loops in C++ interfacing with web visualizers.',
+          'Developed microcontroller sensor sampling loops in C++ interfacing with web visualizers via WebSockets.',
           'Formulated algorithmic solutions for signal analysis and data transmission.',
           'Authored comprehensive technical documentation, circuit schematics, and verification protocols.'
         ]
@@ -225,7 +285,7 @@
     achievements: [
       {
         title: 'Production AI Platform Launch',
-        description: 'Designed and deployed Auralis Studio with real-time SSE token streaming and sub-50ms TTFB on Vercel Edge.'
+        description: 'Designed, built, and deployed Auralis Studio with real-time SSE token streaming and Edge deployment on Vercel.'
       },
       {
         title: 'Hardware to Web Telemetry Bridge',
@@ -233,7 +293,7 @@
       },
       {
         title: 'B.E. Electronics & Communication Engineering Degree',
-        description: 'Graduated in 2024 from Ghousia College of Engineering with strong analytical and systems foundations.'
+        description: 'Graduated in 2024 from Ghousia College of Engineering with strong analytical, mathematical, and systems foundations.'
       }
     ]
   };
@@ -475,6 +535,8 @@
   function renderOverviewPage() {
     if (!mainContentEl) return;
 
+    const ai = resumeData.aiNativeEngineering;
+
     mainContentEl.innerHTML = `
       <!-- Top Action Bar -->
       <div class="main-top-bar no-print">
@@ -501,13 +563,15 @@
 
           <div class="hero-primary-title">${resumeData.profile.title}</div>
           <div class="hero-positioning-line">${resumeData.profile.positioning}</div>
+
           <p class="hero-summary-paragraph">${resumeData.profile.summary}</p>
 
           <div class="hero-tech-badges-strip">
-            <span class="hero-badge">⚡ React & Next.js 14+</span>
-            <span class="hero-badge">🧠 LLM & AI Pipelines</span>
+            <span class="hero-badge">⚡ Next.js & React Architecture</span>
+            <span class="hero-badge">🤖 AI-Native Workflows</span>
+            <span class="hero-badge">🧠 LLM & API Integration</span>
+            <span class="hero-badge">🚀 Supabase & Full-Stack Systems</span>
             <span class="hero-badge">🔌 Embedded C++ Telemetry</span>
-            <span class="hero-badge">🚀 Supabase & PostgreSQL</span>
           </div>
         </div>
 
@@ -576,6 +640,35 @@
             </div>
           </div>
         `).join('')}
+      </section>
+
+      <!-- AI-Native Engineering Capability Card -->
+      <section class="ai-native-capability-card">
+        <div class="ai-native-card-header">
+          <div class="ai-native-card-header-left">
+            <div class="ai-native-eyebrow">
+              <span class="eyebrow-live-pulse"></span>
+              <span>${ai.badge}</span>
+            </div>
+            <h2 class="ai-native-title">${ai.title}</h2>
+            <p class="ai-native-subtext">${ai.description}</p>
+          </div>
+          <div class="ai-native-status-badge">
+            <span>⚡ Human-Directed • AI-Augmented</span>
+          </div>
+        </div>
+
+        <div class="ai-native-pillars-grid">
+          ${ai.pillars.map(p => `
+            <div class="ai-pillar-item">
+              <div class="ai-pillar-icon">${p.icon}</div>
+              <div class="ai-pillar-content">
+                <strong class="ai-pillar-title">${p.title}</strong>
+                <p class="ai-pillar-desc">${p.desc}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
       </section>
 
       <!-- Main Body 3-Card Grid -->
@@ -665,6 +758,38 @@
           <div>
             <h2 class="subpage-title">Technical Expertise</h2>
             <p class="subpage-subtitle">Verified skill matrix & engineering capabilities</p>
+          </div>
+        </div>
+
+        <!-- Skill Tier Legend Bar -->
+        <div class="skills-tier-legend-bar">
+          <div class="skill-tier-item">
+            <div class="skill-tier-indicator tier-strong"></div>
+            <div class="skill-tier-info">
+              <span class="skill-tier-name">Architecture & Product</span>
+              <span class="skill-tier-status">Strong • System Design & UX</span>
+            </div>
+          </div>
+          <div class="skill-tier-item">
+            <div class="skill-tier-indicator tier-strong"></div>
+            <div class="skill-tier-info">
+              <span class="skill-tier-name">AI-Assisted Implementation</span>
+              <span class="skill-tier-status">Strong • Accelerated Code & Workflows</span>
+            </div>
+          </div>
+          <div class="skill-tier-item">
+            <div class="skill-tier-indicator tier-applied"></div>
+            <div class="skill-tier-info">
+              <span class="skill-tier-name">Hands-on Development</span>
+              <span class="skill-tier-status">Working / Applied • Integration & APIs</span>
+            </div>
+          </div>
+          <div class="skill-tier-item">
+            <div class="skill-tier-indicator tier-working"></div>
+            <div class="skill-tier-info">
+              <span class="skill-tier-name">Technology Familiarity</span>
+              <span class="skill-tier-status">Familiar / Working • Infra & Tools</span>
+            </div>
           </div>
         </div>
 

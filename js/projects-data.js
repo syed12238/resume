@@ -9,141 +9,15 @@
 
   const PROJECTS_DATA = [
     {
-      id: 'auralis',
+      id: 'orba',
       number: '01',
       indexLabel: '01 / 06',
-      title: 'AURALIS ATMOSPHERE ENGINE',
-      shortTitle: 'Auralis Engine',
-      category: 'AI EXPERIENCE PLATFORM',
-      tagline: 'AI-powered environmental experience combining generative interfaces, atmospheric states and cinematic interaction.',
-      year: '2024 – 2025',
-      role: 'Lead Architect & Full-Stack Engineer',
-      status: 'Production Live',
-      accentColor: '#c29538',
-      accentGlow: 'rgba(194, 149, 56, 0.45)',
-      accentGradient: 'linear-gradient(135deg, #dfb55e 0%, #c29538 50%, #9d7524 100%)',
-      heroAtmosphere: {
-        meshPrimary: 'rgba(194, 149, 56, 0.18)',
-        meshSecondary: 'rgba(139, 92, 246, 0.14)',
-        glowPosition: '40% 30%',
-        vignetteStrength: '0.85'
-      },
-      technologies: [
-        { name: 'Next.js 14', category: 'framework' },
-        { name: 'AI APIs & SSE', category: 'ai' },
-        { name: 'TypeScript', category: 'language' },
-        { name: 'Supabase RLS', category: 'backend' },
-        { name: 'WebGL Shaders', category: 'graphics' },
-        { name: 'Vercel Edge', category: 'infra' }
-      ],
-      metrics: [
-        { label: 'Time To First Token', value: '38ms', detail: 'Edge SSE Stream' },
-        { label: 'Throughput', value: '58 tok/s', detail: 'Real-time Generation' },
-        { label: 'Lighthouse Score', value: '99/100', detail: 'Performance & SEO' },
-        { label: 'Uptime SLA', value: '99.98%', detail: 'Global Edge Network' }
-      ],
-      summary: 'A luxury generative AI digital experience platform engineered to ingest natural language prompts and render multi-modal atmospheric interfaces with sub-50ms perceived latency.',
-      links: {
-        live: 'https://syedhamza.in',
-        github: 'https://github.com/syed12238/ORBA',
-        caseStudy: '#/resume/projects?view=auralis'
-      },
-      artworkSvg: `
-        <svg viewBox="0 0 1200 680" fill="none" xmlns="http://www.w3.org/2000/svg" class="cinema-hero-svg">
-          <defs>
-            <radialGradient id="aur-grad1" cx="50%" cy="40%" r="60%">
-              <stop offset="0%" stop-color="#c29538" stop-opacity="0.32" />
-              <stop offset="50%" stop-color="#7c3aed" stop-opacity="0.16" />
-              <stop offset="100%" stop-color="#090b10" stop-opacity="0" />
-            </radialGradient>
-            <linearGradient id="aur-line-grad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#dfb55e" stop-opacity="0.8" />
-              <stop offset="50%" stop-color="#a855f7" stop-opacity="0.5" />
-              <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
-            </linearGradient>
-            <filter id="aur-glow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="30" result="blur" />
-              <feComposite in="SourceGraphic" in2="blur" operator="over" />
-            </filter>
-          </defs>
-          <rect width="1200" height="680" fill="#07090e" />
-          <circle cx="680" cy="300" r="380" fill="url(#aur-grad1)" />
-          
-          <!-- Geometric Grid & Constellation -->
-          <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
-            <line x1="100" y1="0" x2="100" y2="680" />
-            <line x1="300" y1="0" x2="300" y2="680" />
-            <line x1="500" y1="0" x2="500" y2="680" />
-            <line x1="700" y1="0" x2="700" y2="680" />
-            <line x1="900" y1="0" x2="900" y2="680" />
-            <line x1="1100" y1="0" x2="1100" y2="680" />
-            <line x1="0" y1="140" x2="1200" y2="140" />
-            <line x1="0" y1="280" x2="1200" y2="280" />
-            <line x1="0" y1="420" x2="1200" y2="420" />
-            <line x1="0" y1="560" x2="1200" y2="560" />
-          </g>
-
-          <!-- Neural Wave Horizons -->
-          <path d="M0 480 Q 300 320, 600 420 T 1200 340" stroke="url(#aur-line-grad)" stroke-width="2.5" fill="none" filter="url(#aur-glow)" opacity="0.85" />
-          <path d="M0 520 Q 350 380, 700 460 T 1200 400" stroke="#c29538" stroke-width="1.5" stroke-dasharray="6 6" fill="none" opacity="0.6" />
-          <path d="M0 440 Q 250 260, 650 360 T 1200 280" stroke="#a855f7" stroke-width="1.2" fill="none" opacity="0.45" />
-
-          <!-- Core Ambient Sphere -->
-          <circle cx="780" cy="260" r="140" stroke="rgba(194, 149, 56, 0.4)" stroke-width="1.5" fill="none" />
-          <circle cx="780" cy="260" r="190" stroke="rgba(168, 85, 247, 0.25)" stroke-width="1" stroke-dasharray="8 8" fill="none" />
-          <circle cx="780" cy="260" r="12" fill="#dfb55e" filter="url(#aur-glow)" />
-
-          <!-- Floating Data Points -->
-          <circle cx="480" cy="380" r="5" fill="#dfb55e" />
-          <circle cx="620" cy="420" r="4" fill="#a855f7" />
-          <circle cx="950" cy="350" r="6" fill="#38bdf8" />
-          <circle cx="340" cy="320" r="4" fill="#dfb55e" />
-        </svg>
-      `,
-      caseStudy: {
-        headline: 'Engineering an Ultra-Low-Latency Edge AI Atmosphere Engine',
-        challenge: 'Standard generative AI interfaces suffer from jarring loading spinners, 1000ms+ latency spikes, and clunky token batching. The architectural goal was to eliminate perceived waiting time and render high-fidelity generative visual environments at 60 FPS.',
-        architecture: [
-          'Server-Sent Events (SSE) streaming pipeline on Vercel Edge Runtime for immediate token ingestion with zero client polling.',
-          'Zod schema-validated deterministic parser extracting structured interface tokens from generative streams on the fly.',
-          'Supabase PostgreSQL persistence layer secured by granular Row-Level Security (RLS) policies and JWT session caching.',
-          'WebGL canvas shader background dynamically shifting ambient light gradients and hue based on generated sentiment.'
-        ],
-        codeSnippet: `// Edge Runtime Response Handler with SSE Streaming
-export const runtime = 'edge';
-
-export async function POST(req: Request) {
-  const { prompt, sentimentContext } = await req.json();
-  
-  // Synthesize LLM token stream with dynamic token budgeting
-  const stream = await orchestrateAtmosphereStream({
-    prompt,
-    context: sentimentContext,
-    temperature: 0.25,
-    maxTokens: 1200
-  });
-
-  return new Response(stream, {
-    headers: {
-      'Content-Type': 'text/event-stream',
-      'Cache-Control': 'no-cache, no-transform',
-      'Connection': 'keep-alive'
-    }
-  });
-}`,
-        impact: 'Reduced Time-To-First-Token (TTFB) to 38ms globally. Achieved seamless 60FPS fluid transitions across all desktop and mobile viewports with 99.98% operational uptime.'
-      }
-    },
-    {
-      id: 'orba',
-      number: '02',
-      indexLabel: '02 / 06',
       title: 'ORBA — REAL-TIME SOCIAL PLATFORM',
       shortTitle: 'ORBA Social',
       category: 'REAL-TIME SOCIAL NETWORK',
       tagline: 'Next-generation real-time social media platform where conversations orbit people, interactive user profiles, live feeds, and real-time social dynamics.',
       year: '2024 – 2025',
-      role: 'Creator & Full-Stack Architect',
+      role: 'Creator & Full-Stack Builder (AI-Native Workflow)',
       status: 'Active Live Deployment',
       accentColor: '#06b6d4',
       accentGlow: 'rgba(6, 182, 212, 0.45)',
@@ -170,7 +44,7 @@ export async function POST(req: Request) {
       ],
       summary: 'High-performance real-time social media platform where conversations orbit people. Features custom interactive user profiles, dynamic activity feeds, live post interactions, OAuth 2.0 PKCE authentication with Supabase, and sub-25ms WebSocket updates deployed globally on Vercel.',
       links: {
-        live: 'https://orba-two.vercel.app/',
+        live: 'https://orba.syedhamza.in/',
         caseStudy: '#/resume/projects?view=orba'
       },
       artworkSvg: `
@@ -259,7 +133,133 @@ export function useOrbitSocialFeed(userId: string) {
 
   return { feed };
 }`,
-        impact: 'Successfully delivered sub-25ms real-time social feed synchronization across global regions, 100% PKCE auth security compliance, and seamless cross-device mobile responsiveness live at orba-two.vercel.app.'
+        impact: 'Successfully delivered sub-25ms real-time social feed synchronization across global regions, 100% PKCE auth security compliance, and seamless cross-device mobile responsiveness live at orba.syedhamza.in.'
+      }
+    },
+    {
+      id: 'auralis',
+      number: '02',
+      indexLabel: '02 / 06',
+      title: 'AURALIS ATMOSPHERE ENGINE',
+      shortTitle: 'Auralis Engine',
+      category: 'AI EXPERIENCE PLATFORM',
+      tagline: 'AI-powered environmental experience combining generative interfaces, atmospheric states and cinematic interaction.',
+      year: '2024 – 2025',
+      role: 'Architect & Full-Stack Builder (AI-Native Workflow)',
+      status: 'Production Live',
+      accentColor: '#c29538',
+      accentGlow: 'rgba(194, 149, 56, 0.45)',
+      accentGradient: 'linear-gradient(135deg, #dfb55e 0%, #c29538 50%, #9d7524 100%)',
+      heroAtmosphere: {
+        meshPrimary: 'rgba(194, 149, 56, 0.18)',
+        meshSecondary: 'rgba(139, 92, 246, 0.14)',
+        glowPosition: '40% 30%',
+        vignetteStrength: '0.85'
+      },
+      technologies: [
+        { name: 'Next.js 14', category: 'framework' },
+        { name: 'AI APIs & SSE', category: 'ai' },
+        { name: 'TypeScript', category: 'language' },
+        { name: 'Supabase RLS', category: 'backend' },
+        { name: 'WebGL Shaders', category: 'graphics' },
+        { name: 'Vercel Edge', category: 'infra' }
+      ],
+      metrics: [
+        { label: 'Time To First Token', value: '38ms', detail: 'Edge SSE Stream' },
+        { label: 'Throughput', value: '58 tok/s', detail: 'Real-time Generation' },
+        { label: 'Lighthouse Score', value: '99/100', detail: 'Performance & SEO' },
+        { label: 'Uptime SLA', value: '99.98%', detail: 'Global Edge Network' }
+      ],
+      summary: 'A luxury generative AI digital experience platform engineered to ingest natural language prompts and render multi-modal atmospheric interfaces with sub-50ms perceived latency.',
+      links: {
+        live: 'https://atmosphere-engine.auralisstudio.xyz/',
+        github: 'https://github.com/syed12238/ORBA',
+        caseStudy: '#/resume/projects?view=auralis'
+      },
+      artworkSvg: `
+        <svg viewBox="0 0 1200 680" fill="none" xmlns="http://www.w3.org/2000/svg" class="cinema-hero-svg">
+          <defs>
+            <radialGradient id="aur-grad1" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#c29538" stop-opacity="0.32" />
+              <stop offset="50%" stop-color="#7c3aed" stop-opacity="0.16" />
+              <stop offset="100%" stop-color="#090b10" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="aur-line-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#dfb55e" stop-opacity="0.8" />
+              <stop offset="50%" stop-color="#a855f7" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+            </linearGradient>
+            <filter id="aur-glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="30" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+          <rect width="1200" height="680" fill="#07090e" />
+          <circle cx="680" cy="300" r="380" fill="url(#aur-grad1)" />
+          
+          <!-- Geometric Grid & Constellation -->
+          <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+            <line x1="100" y1="0" x2="100" y2="680" />
+            <line x1="300" y1="0" x2="300" y2="680" />
+            <line x1="500" y1="0" x2="500" y2="680" />
+            <line x1="700" y1="0" x2="700" y2="680" />
+            <line x1="900" y1="0" x2="900" y2="680" />
+            <line x1="1100" y1="0" x2="1100" y2="680" />
+            <line x1="0" y1="140" x2="1200" y2="140" />
+            <line x1="0" y1="280" x2="1200" y2="280" />
+            <line x1="0" y1="420" x2="1200" y2="420" />
+            <line x1="0" y1="560" x2="1200" y2="560" />
+          </g>
+
+          <!-- Neural Wave Horizons -->
+          <path d="M0 480 Q 300 320, 600 420 T 1200 340" stroke="url(#aur-line-grad)" stroke-width="2.5" fill="none" filter="url(#aur-glow)" opacity="0.85" />
+          <path d="M0 520 Q 350 380, 700 460 T 1200 400" stroke="#c29538" stroke-width="1.5" stroke-dasharray="6 6" fill="none" opacity="0.6" />
+          <path d="M0 440 Q 250 260, 650 360 T 1200 280" stroke="#a855f7" stroke-width="1.2" fill="none" opacity="0.45" />
+
+          <!-- Core Ambient Sphere -->
+          <circle cx="780" cy="260" r="140" stroke="rgba(194, 149, 56, 0.4)" stroke-width="1.5" fill="none" />
+          <circle cx="780" cy="260" r="190" stroke="rgba(168, 85, 247, 0.25)" stroke-width="1" stroke-dasharray="8 8" fill="none" />
+          <circle cx="780" cy="260" r="12" fill="#dfb55e" filter="url(#aur-glow)" />
+
+          <!-- Floating Data Points -->
+          <circle cx="480" cy="380" r="5" fill="#dfb55e" />
+          <circle cx="620" cy="420" r="4" fill="#a855f7" />
+          <circle cx="950" cy="350" r="6" fill="#38bdf8" />
+          <circle cx="340" cy="320" r="4" fill="#dfb55e" />
+        </svg>
+      `,
+      caseStudy: {
+        headline: 'Engineering an Ultra-Low-Latency Edge AI Atmosphere Engine',
+        challenge: 'Standard generative AI interfaces suffer from jarring loading spinners, 1000ms+ latency spikes, and clunky token batching. The architectural goal was to eliminate perceived waiting time and render high-fidelity generative visual environments at 60 FPS.',
+        architecture: [
+          'Server-Sent Events (SSE) streaming pipeline on Vercel Edge Runtime for immediate token ingestion with zero client polling.',
+          'Zod schema-validated deterministic parser extracting structured interface tokens from generative streams on the fly.',
+          'Supabase PostgreSQL persistence layer secured by granular Row-Level Security (RLS) policies and JWT session caching.',
+          'WebGL canvas shader background dynamically shifting ambient light gradients and hue based on generated sentiment.'
+        ],
+        codeSnippet: `// Edge Runtime Response Handler with SSE Streaming
+export const runtime = 'edge';
+
+export async function POST(req: Request) {
+  const { prompt, sentimentContext } = await req.json();
+  
+  // Synthesize LLM token stream with dynamic token budgeting
+  const stream = await orchestrateAtmosphereStream({
+    prompt,
+    context: sentimentContext,
+    temperature: 0.25,
+    maxTokens: 1200
+  });
+
+  return new Response(stream, {
+    headers: {
+      'Content-Type': 'text/event-stream',
+      'Cache-Control': 'no-cache, no-transform',
+      'Connection': 'keep-alive'
+    }
+  });
+}`,
+        impact: 'Reduced Time-To-First-Token (TTFB) to 38ms globally. Achieved seamless 60FPS fluid transitions across all desktop and mobile viewports with 99.98% operational uptime.'
       }
     },
     {

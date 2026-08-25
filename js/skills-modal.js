@@ -121,7 +121,8 @@
         <div class="skill-modal-header-left">
           <div class="skill-modal-badges-row">
             <span class="skill-category-badge">${data.category}</span>
-            <span class="skill-depth-badge">${data.depthLevel}</span>
+            <span class="skill-depth-badge">${data.tier ? `${data.tier} • ${data.level || data.depthLevel}` : data.depthLevel}</span>
+            ${data.howIUseIt ? `<span class="skill-how-badge">${data.howIUseIt}</span>` : ''}
           </div>
           <h2 class="skill-modal-title">
             <span>${data.name}</span>

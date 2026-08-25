@@ -15,8 +15,11 @@
       id: 'llm-integration',
       name: 'LLM Integration',
       category: 'AI & Intelligent Systems',
+      tier: 'AI-Assisted Implementation',
+      level: 'Strong',
+      howIUseIt: 'AI-Assisted Pipelines & Streaming APIs',
       depthLevel: 'Applied / Production',
-      shortDescription: 'Architecting deterministic pipelines, token streaming, structured JSON schemas, and function calling with modern Large Language Models.',
+      shortDescription: 'Architecting streaming LLM pipelines, structured JSON schema enforcement, and tool routing for AI-assisted digital products.',
       whatIsIt: {
         simple: 'Connecting applications to intelligent AI models so software can analyze, transform, and generate natural language and structured outputs.',
         technical: 'Integrating foundational model APIs (OpenAI GPT-4o, Anthropic Claude 3.5 Sonnet) via Server-Sent Events (SSE) streaming, strict JSON schema validation, context window budgeting, and automated retry backoff.',
@@ -66,7 +69,7 @@ export async function POST(req: Request) {
       whereIUsedIt: {
         project: 'Auralis Studio & NeuralForge',
         role: 'AI Systems Architect',
-        details: 'Implemented real-time streaming LLM generation pipeline in Auralis Studio with Zod schema validation, streaming AST token rendering, and client-side retry handling on Vercel Edge.'
+        details: 'Designed and implemented real-time streaming LLM generation pipelines in Auralis Studio with Zod schema validation, streaming AST token rendering, and client-side retry handling on Vercel Edge.'
       },
       engineeringDecisions: [
         'Context Window Budgeting: Trim conversational history using sliding semantic windows to prevent token exhaustion.',
@@ -93,6 +96,9 @@ export async function POST(req: Request) {
       id: 'prompt-engineering',
       name: 'Prompt Engineering',
       category: 'AI & Intelligent Systems',
+      tier: 'AI-Assisted Implementation',
+      level: 'Strong',
+      howIUseIt: 'Specification Writing & Task Direction',
       depthLevel: 'Core Practice',
       shortDescription: 'Systematic prompt design: instruction hierarchies, chain-of-thought, few-shot conditioning, and constrained schema induction.',
       whatIsIt: {
@@ -156,10 +162,13 @@ Output: {"method":"GET","path":"/api/projects","query":{"owner_id":"string","sta
       id: 'ai-application-development',
       name: 'AI Application Development',
       category: 'AI & Intelligent Systems',
+      tier: 'AI-Assisted Implementation',
+      level: 'Strong',
+      howIUseIt: 'AI-Augmented Full-Stack Delivery',
       depthLevel: 'Applied / Production',
-      shortDescription: 'Building end-to-end full-stack software where AI is an active orchestration engine rather than just a standalone chatbot.',
+      shortDescription: 'Building end-to-end full-stack software where AI accelerates implementation and drives interactive user experiences.',
       whatIsIt: {
-        simple: 'Creating complete software products where intelligent AI agents automate tasks, process data, and dynamically drive user interfaces.',
+        simple: 'Creating complete software products where intelligent AI workflows automate tasks, process data, and dynamically drive user interfaces.',
         technical: 'Architecting multi-tier distributed systems integrating reactive frontend frameworks, edge computing, streaming APIs, database persistence, and AI reasoning engines.',
         engineeringPerspective: 'Engineering full-stack systems around AI primitives: handling latency gracefully with optimistic UI and streaming, managing state consistency across non-deterministic outputs, and designing robust fallback paths.'
       },
@@ -197,8 +206,8 @@ async function handleUserTask(userId: string, task: string) {
       },
       whereIUsedIt: {
         project: 'Auralis Studio & NeuralForge',
-        role: 'Full-Stack AI Engineer',
-        details: 'Architected Auralis Studio as an end-to-end platform enabling creators to generate digital experiences powered by Next.js, Supabase, and real-time LLM orchestration.'
+        role: 'Full-Stack AI Builder',
+        details: 'Architected and shipped Auralis Studio as an end-to-end platform enabling creators to generate digital experiences powered by Next.js, Supabase, and real-time LLM orchestration.'
       },
       engineeringDecisions: [
         'Optimistic UI: Render skeleton states and streaming tokens immediately to mask LLM time-to-first-token.',
@@ -221,6 +230,9 @@ async function handleUserTask(userId: string, task: string) {
       id: 'ai-workflows',
       name: 'AI Workflows',
       category: 'AI & Intelligent Systems',
+      tier: 'AI-Assisted Implementation',
+      level: 'Strong',
+      howIUseIt: 'Multi-Step Task Orchestration & Tool Use',
       depthLevel: 'Production / Architecture',
       shortDescription: 'Multi-stage autonomous pipelines, deterministic state machines, tool routing, and human-in-the-loop validation.',
       whatIsIt: {
@@ -258,7 +270,7 @@ async function executeWorkflowStep(state: WorkflowState): Promise<WorkflowState>
       whereIUsedIt: {
         project: 'NeuralForge Task Engine',
         role: 'Workflow Systems Lead',
-        details: 'Built an autonomous workflow DAG coordinator in NeuralForge executing multi-step developer tasks with automated validation loops.'
+        details: 'Designed and coordinated autonomous workflow DAG execution in NeuralForge, executing multi-step developer tasks with automated validation loops.'
       },
       engineeringDecisions: [
         'Idempotency Keys: Assign deterministic UUIDs to workflow runs to prevent duplicate downstream side-effects.',
@@ -281,6 +293,9 @@ async function executeWorkflowStep(state: WorkflowState): Promise<WorkflowState>
       id: 'vector-db',
       name: 'Vector DB',
       category: 'AI & Intelligent Systems',
+      tier: 'Technology Familiarity',
+      level: 'Familiar / Working',
+      howIUseIt: 'Semantic Search & In-Memory Retrieval',
       depthLevel: 'Working Knowledge',
       shortDescription: 'High-dimensional embeddings, cosine similarity search, pgvector indexing, and Retrieval-Augmented Generation (RAG).',
       whatIsIt: {
@@ -312,12 +327,12 @@ LIMIT 5;`,
       },
       problemSolved: {
         without: ['Keyword search failing when exact terms do not match', 'LLMs hallucinating facts outside their training cutoff', 'Inability to search massive document sets within context limits'],
-        with: ['Semantic concept matching across synonyms and multilingual text', 'Accurate RAG grounding with verifiable source citations', 'Sub-10ms search over millions of document embeddings']
+        with: ['Semantic concept matching across synonyms and multilingual text', 'Accurate RAG grounding with verifiable source citations', 'Sub-10ms search over document embeddings']
       },
       whereIUsedIt: {
         project: 'NeuralForge Semantic Cache',
         role: 'Database & Systems Engineer',
-        details: 'Implemented Supabase pgvector similarity search to match user prompts against previously computed task graphs, reducing duplicate API calls by 35%.'
+        details: 'Applied Supabase pgvector similarity search to match user prompts against cached task graphs, optimizing API utilization.'
       },
       engineeringDecisions: [
         'HNSW vs IVFFlat: Use HNSW indexes for lower search latency and higher recall at the cost of slightly higher memory usage.',
@@ -340,6 +355,9 @@ LIMIT 5;`,
       id: 'claude-openai-apis',
       name: 'Claude & OpenAI APIs',
       category: 'AI & Intelligent Systems',
+      tier: 'AI-Assisted Implementation',
+      level: 'Strong',
+      howIUseIt: 'Foundation Model Integration & Function Calling',
       depthLevel: 'Applied / Production',
       shortDescription: 'Production API lifecycle, authentication, model selection, token streaming, rate limit handling, and structured tool calling.',
       whatIsIt: {
@@ -408,6 +426,9 @@ for await (const chunk of stream) {
       id: 'react',
       name: 'React',
       category: 'Frontend Engineering',
+      tier: 'AI-Assisted Implementation',
+      level: 'Strong',
+      howIUseIt: 'AI-Assisted Component Architecture',
       depthLevel: 'Applied / Production',
       shortDescription: 'Component architecture, state management hooks, virtual DOM reconciliation, declarative rendering model, and lifecycle control.',
       whatIsIt: {
@@ -449,7 +470,7 @@ for await (const chunk of stream) {
       },
       whereIUsedIt: {
         project: 'Auralis Studio & Resume OS',
-        role: 'Lead Frontend Developer',
+        role: 'Frontend Architect',
         details: 'Engineered modular component architecture for Auralis Studio with custom hooks, synchronized state stores, and sub-second rendering performance.'
       },
       engineeringDecisions: [
@@ -477,6 +498,9 @@ for await (const chunk of stream) {
       id: 'next-js-14',
       name: 'Next.js 14+',
       category: 'Frontend Engineering',
+      tier: 'AI-Assisted Implementation',
+      level: 'Strong',
+      howIUseIt: 'Full-Stack Architecture & App Router',
       depthLevel: 'Applied / Production',
       shortDescription: 'App Router, React Server Components (RSC), Edge Runtime, Server Actions, streaming SSR, and automated routing.',
       whatIsIt: {
@@ -541,6 +565,9 @@ export default async function ProjectsPage() {
       id: 'typescript',
       name: 'TypeScript',
       category: 'Frontend Engineering',
+      tier: 'Hands-on Development',
+      level: 'Applied / Working',
+      howIUseIt: 'Type Safety & AI-Assisted Implementation',
       depthLevel: 'Applied / Production',
       shortDescription: 'Static type checking, generic constraints, discriminated unions, interface contracts, and build-time bug prevention.',
       whatIsIt: {
@@ -580,7 +607,7 @@ function handleResult(res: ApiResponse<User>) {
       },
       whereIUsedIt: {
         project: 'Auralis Studio & NeuralForge',
-        role: 'Full-Stack Engineer',
+        role: 'Full-Stack Developer',
         details: 'Implemented strict TypeScript contracts throughout full-stack codebases with shared database models, Zod validation, and zero "any" types in production.'
       },
       engineeringDecisions: [
@@ -604,6 +631,9 @@ function handleResult(res: ApiResponse<User>) {
       id: 'modern-javascript',
       name: 'Modern JavaScript',
       category: 'Frontend Engineering',
+      tier: 'Hands-on Development',
+      level: 'Applied / Working',
+      howIUseIt: 'Async Control Flow & DOM Engines',
       depthLevel: 'Core Mastery',
       shortDescription: 'ES6+ specifications, V8 event loop, microtask queue, closures, async/await promises, and modular execution.',
       whatIsIt: {
@@ -666,6 +696,9 @@ async function fetchUserDashboard(userId) {
       id: 'html5',
       name: 'HTML5',
       category: 'Frontend Engineering',
+      tier: 'Hands-on Development',
+      level: 'Applied / Working',
+      howIUseIt: 'Semantic Structure & Accessibility',
       depthLevel: 'Core Mastery',
       shortDescription: 'Semantic document structure, DOM tree parsing, ARIA accessibility landmarks, Canvas API, and Web Standards.',
       whatIsIt: {
@@ -726,6 +759,9 @@ async function fetchUserDashboard(userId) {
       id: 'css3',
       name: 'CSS3',
       category: 'Frontend Engineering',
+      tier: 'Hands-on Development',
+      level: 'Applied / Working',
+      howIUseIt: 'Design Tokens & 60FPS Micro-Animations',
       depthLevel: 'Core Mastery',
       shortDescription: 'Cascade algorithms, CSS custom properties, Flexbox/Grid layouts, box model physics, and hardware-accelerated animations.',
       whatIsIt: {
@@ -793,6 +829,9 @@ async function fetchUserDashboard(userId) {
       id: 'responsive-architecture',
       name: 'Responsive Architecture',
       category: 'Frontend Engineering',
+      tier: 'Architecture & Product',
+      level: 'Strong',
+      howIUseIt: 'Multi-Device Adaptive Layout Systems',
       depthLevel: 'Core Mastery',
       shortDescription: 'Mobile-first design, fluid viewport scaling, container queries, adaptive layouts, and touch optimization.',
       whatIsIt: {
@@ -857,6 +896,9 @@ async function fetchUserDashboard(userId) {
       id: 'animation-systems',
       name: 'Animation Systems',
       category: 'Frontend Engineering',
+      tier: 'Architecture & Product',
+      level: 'Strong',
+      howIUseIt: 'Physics Springs, Tilts & Canvas Math',
       depthLevel: 'Applied / Production',
       shortDescription: 'requestAnimationFrame, physics-based spring curves, 60FPS canvas loops, and purposeful UI micro-interactions.',
       whatIsIt: {
@@ -887,7 +929,7 @@ function countUp(element, target, duration = 800) {
     if (progress < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
-}`,
+} `,
         demoOutput: '>> Rendered 48 frames in 800ms | 0 dropped frames | 60.0 FPS.'
       },
       problemSolved: {
@@ -920,6 +962,9 @@ function countUp(element, target, duration = 800) {
       id: 'tailwind',
       name: 'Tailwind',
       category: 'Frontend Engineering',
+      tier: 'AI-Assisted Implementation',
+      level: 'Strong',
+      howIUseIt: 'Rapid Prototyping & Utility Design',
       depthLevel: 'Working Knowledge',
       shortDescription: 'Utility-first CSS, compile-time purge, responsive variants, design token scales, and rapid UI prototyping.',
       whatIsIt: {
@@ -979,6 +1024,9 @@ function countUp(element, target, duration = 800) {
       id: 'node-js',
       name: 'Node.js',
       category: 'Backend Engineering',
+      tier: 'Hands-on Development',
+      level: 'Applied / Working',
+      howIUseIt: 'Static Servers & WebSocket Gateways',
       depthLevel: 'Applied / Production',
       shortDescription: 'Asynchronous event-driven JavaScript runtime powered by V8 engine and libuv for high-concurrency microservices.',
       whatIsIt: {
@@ -1021,7 +1069,7 @@ server.listen(8085);`,
       },
       whereIUsedIt: {
         project: 'CogniRoute Telemetry Bridge & Backend APIs',
-        role: 'Backend Engineer',
+        role: 'Backend Developer',
         details: 'Engineered Node.js WebSocket telemetry gateway receiving binary ADC frames from microcontrollers and broadcasting to real-time client visualizers.'
       },
       engineeringDecisions: [
@@ -1045,6 +1093,9 @@ server.listen(8085);`,
       id: 'express',
       name: 'Express',
       category: 'Backend Engineering',
+      tier: 'Hands-on Development',
+      level: 'Applied / Working',
+      howIUseIt: 'REST Routing & Middleware Chains',
       depthLevel: 'Applied / Production',
       shortDescription: 'Minimalist web framework for Node.js: HTTP routing, middleware pipeline execution, request parsing, and REST controllers.',
       whatIsIt: {
@@ -1110,6 +1161,9 @@ app.get('/api/profile', authenticateToken, async (req, res, next) => {
       id: 'rest-apis',
       name: 'REST APIs',
       category: 'Backend Engineering',
+      tier: 'Hands-on Development',
+      level: 'Applied / Working',
+      howIUseIt: 'API Design & Client-Server Contracts',
       depthLevel: 'Applied / Production',
       shortDescription: 'Stateless architectural constraints, standard HTTP verbs (GET, POST, PUT, DELETE), status codes, and JSON contract design.',
       whatIsIt: {
@@ -1170,6 +1224,9 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
       id: 'authentication-jwt-oauth',
       name: 'Authentication (JWT/OAuth)',
       category: 'Backend Engineering',
+      tier: 'Hands-on Development',
+      level: 'Applied / Working',
+      howIUseIt: 'Supabase Auth & OAuth 2.0 PKCE',
       depthLevel: 'Applied / Production',
       shortDescription: 'Cryptographic token signing, JWT claims, stateless session verification, OAuth 2.0 authorization delegation, and Refresh Token rotation.',
       whatIsIt: {
@@ -1233,6 +1290,9 @@ export async function verifyAuthToken(req: Request) {
       id: 'server-side-architecture',
       name: 'Server-side Architecture',
       category: 'Backend Engineering',
+      tier: 'Architecture & Product',
+      level: 'Strong',
+      howIUseIt: 'Modular Service & Repository Design',
       depthLevel: 'Production / Architecture',
       shortDescription: 'Layered architecture (Controllers, Services, Repositories), dependency injection, error boundaries, and scalable API services.',
       whatIsIt: {
@@ -1296,6 +1356,9 @@ class ProjectService {
       id: 'middleware',
       name: 'Middleware',
       category: 'Backend Engineering',
+      tier: 'Hands-on Development',
+      level: 'Applied / Working',
+      howIUseIt: 'Session Verification & Route Protection',
       depthLevel: 'Applied / Production',
       shortDescription: 'Chain-of-responsibility pattern, request interception, authentication gates, rate limiting, and centralized error handling.',
       whatIsIt: {
@@ -1364,6 +1427,9 @@ export async function middleware(req: NextRequest) {
       id: 'supabase',
       name: 'Supabase',
       category: 'Databases',
+      tier: 'AI-Assisted Implementation',
+      level: 'Strong',
+      howIUseIt: 'PostgreSQL BaaS, RLS & Real-Time Sync',
       depthLevel: 'Applied / Production',
       shortDescription: 'Open-source Firebase alternative: managed PostgreSQL, Row-Level Security, instant REST/GraphQL APIs, and Realtime WebSockets.',
       whatIsIt: {
@@ -1404,7 +1470,7 @@ export async function getUserProjects() {
       },
       whereIUsedIt: {
         project: 'Auralis Studio Platform',
-        role: 'Database & Backend Lead',
+        role: 'Database & Full-Stack Builder',
         details: 'Architected Auralis Studio database on Supabase PostgreSQL with automated RLS policies, custom SQL triggers, and real-time state synchronization.'
       },
       engineeringDecisions: [
@@ -1428,6 +1494,9 @@ export async function getUserProjects() {
       id: 'postgresql',
       name: 'PostgreSQL',
       category: 'Databases',
+      tier: 'Hands-on Development',
+      level: 'Applied / Working',
+      howIUseIt: 'Relational Schemas & Foreign Keys',
       depthLevel: 'Applied / Production',
       shortDescription: 'ACID-compliant relational database management system, advanced indexing (B-Tree, GIN, HNSW), JSONB, and complex query plans.',
       whatIsIt: {
@@ -1457,7 +1526,7 @@ WHERE p.status = 'active' AND p.created_at > NOW() - INTERVAL '30 days';`,
       },
       problemSolved: {
         without: ['Data corruption and inconsistent records from lack of transactional ACID guarantees', 'Slow queries choking the system as table sizes grow into millions of rows', 'Rigid databases incapable of storing both structured tables and flexible JSON'],
-        with: ['Absolute mathematical ACID transaction consistency', 'Sub-millisecond query execution on millions of records using B-Tree and GIN indexes', 'Hybrid relational and JSONB document storage in a single unified database']
+        with: ['Absolute mathematical ACID transaction consistency', 'Sub-millisecond query execution on records using B-Tree and GIN indexes', 'Hybrid relational and JSONB document storage in a single unified database']
       },
       whereIUsedIt: {
         project: 'Auralis Studio & NeuralForge Systems',
@@ -1485,6 +1554,9 @@ WHERE p.status = 'active' AND p.created_at > NOW() - INTERVAL '30 days';`,
       id: 'relational-schema-design',
       name: 'Relational Schema Design',
       category: 'Databases',
+      tier: 'Architecture & Product',
+      level: 'Strong',
+      howIUseIt: 'Entity Modeling & Schema Normalization',
       depthLevel: 'Production / Architecture',
       shortDescription: 'Entity-Relationship modeling, 3rd Normal Form (3NF), primary/foreign key constraints, and data integrity guarantees.',
       whatIsIt: {
@@ -1550,6 +1622,9 @@ CREATE TABLE projects (
       id: 'row-level-security-rls',
       name: 'Row-Level Security (RLS)',
       category: 'Databases',
+      tier: 'Hands-on Development',
+      level: 'Applied / Working',
+      howIUseIt: 'Multi-Tenant Database Authorization',
       depthLevel: 'Applied / Production',
       shortDescription: 'PostgreSQL security policies, user context binding (auth.uid()), multi-tenant data isolation, and database-layer authorization.',
       whatIsIt: {
@@ -1613,6 +1688,9 @@ USING (auth.uid() = owner_id);`,
       id: 'sql-optimization',
       name: 'SQL Optimization',
       category: 'Databases',
+      tier: 'Technology Familiarity',
+      level: 'Familiar / Working',
+      howIUseIt: 'Indexing Strategies & Query Tuning',
       depthLevel: 'Applied / Production',
       shortDescription: 'EXPLAIN ANALYZE query plans, B-Tree & composite indexing, avoiding N+1 bottlenecks, and connection pooling.',
       whatIsIt: {
@@ -1678,6 +1756,9 @@ LIMIT 20;`,
       id: 'vercel-edge',
       name: 'Vercel Edge',
       category: 'Infrastructure',
+      tier: 'AI-Assisted Implementation',
+      level: 'Strong',
+      howIUseIt: 'Edge Deployments & Serverless Functions',
       depthLevel: 'Applied / Production',
       shortDescription: 'Global CDN edge network, lightweight V8 runtime, serverless function routing, and sub-50ms TTFB worldwide.',
       whatIsIt: {
@@ -1716,7 +1797,7 @@ export async function GET(req: Request) {
       },
       whereIUsedIt: {
         project: 'Auralis Studio & Resume OS Deployment',
-        role: 'DevOps & Deployment Engineer',
+        role: 'Deployment Engineer',
         details: 'Configured automated Vercel CI/CD pipelines, custom preview deployments, edge middleware, and streaming API endpoints for Auralis Studio.'
       },
       engineeringDecisions: [
@@ -1740,6 +1821,9 @@ export async function GET(req: Request) {
       id: 'docker',
       name: 'Docker',
       category: 'Infrastructure',
+      tier: 'Technology Familiarity',
+      level: 'Familiar / Working',
+      howIUseIt: 'Local Development & Container Setup',
       depthLevel: 'Working Knowledge',
       shortDescription: 'OS-level containerization, multi-stage Dockerfiles, image layer caching, container networking, and reproducible environments.',
       whatIsIt: {
@@ -1807,6 +1891,9 @@ CMD ["node", "dist/server.js"]`,
       id: 'git-github-ci-cd',
       name: 'Git / GitHub CI/CD',
       category: 'Infrastructure',
+      tier: 'Hands-on Development',
+      level: 'Applied / Working',
+      howIUseIt: 'Version Control & Automated Workflows',
       depthLevel: 'Core Mastery',
       shortDescription: 'Distributed version control, atomic commits, branch workflows, automated GitHub Actions pipelines, testing, and continuous deployment.',
       whatIsIt: {
@@ -1849,7 +1936,7 @@ jobs:
       },
       whereIUsedIt: {
         project: 'All Production Repositories',
-        role: 'Lead Developer',
+        role: 'Full-Stack Developer',
         details: 'Managed git workflows across all projects with conventional commit messages, feature branches, and automated GitHub Actions CI pipelines.'
       },
       engineeringDecisions: [
@@ -1873,6 +1960,9 @@ jobs:
       id: 'linux-wsl',
       name: 'Linux / WSL',
       category: 'Infrastructure',
+      tier: 'Technology Familiarity',
+      level: 'Familiar / Working',
+      howIUseIt: 'CLI Tooling & Shell Scripting',
       depthLevel: 'Working Knowledge',
       shortDescription: 'POSIX shell scripting, bash automation, filesystem navigation, process management, and Windows Subsystem for Linux 2.',
       whatIsIt: {
@@ -1936,6 +2026,9 @@ echo ">> Verification complete."`,
       id: 'postman',
       name: 'Postman',
       category: 'Infrastructure',
+      tier: 'Technology Familiarity',
+      level: 'Familiar / Working',
+      howIUseIt: 'Endpoint Verification & API Testing',
       depthLevel: 'Working Knowledge',
       shortDescription: 'API contract testing, environment variables, collection runners, automated mock servers, and payload inspection.',
       whatIsIt: {
@@ -2000,6 +2093,9 @@ pm.test("Response contains valid project payload", function () {
       id: 'system-design',
       name: 'System Design',
       category: 'Engineering Fundamentals',
+      tier: 'Architecture & Product',
+      level: 'Strong',
+      howIUseIt: 'End-to-End Product & System Architecture',
       depthLevel: 'Production / Architecture',
       shortDescription: 'Scalable architecture, horizontal scaling, caching strategies, load balancing, stateless services, and fault tolerance.',
       whatIsIt: {
@@ -2060,6 +2156,9 @@ pm.test("Response contains valid project payload", function () {
       id: 'api-architecture',
       name: 'API Architecture',
       category: 'Engineering Fundamentals',
+      tier: 'Architecture & Product',
+      level: 'Strong',
+      howIUseIt: 'Interface Design & Contract Specifications',
       depthLevel: 'Production / Architecture',
       shortDescription: 'Contract-first design, API versioning, idempotency, rate limiting, error envelope standards, and backward compatibility.',
       whatIsIt: {
@@ -2127,6 +2226,9 @@ export function successResponse<T>(data: T): Response {
       id: 'problem-solving',
       name: 'Problem Solving',
       category: 'Engineering Fundamentals',
+      tier: 'Architecture & Product',
+      level: 'Strong',
+      howIUseIt: 'Root-Cause Debugging & Trade-Off Analysis',
       depthLevel: 'Core Practice',
       shortDescription: 'First-principles reasoning, problem decomposition, algorithmic logic, hypothesis testing, and root cause analysis.',
       whatIsIt: {
@@ -2191,6 +2293,9 @@ function isolateFailureDomain(steps: Array<() => Promise<boolean>>) {
       id: 'product-engineering',
       name: 'Product Engineering',
       category: 'Engineering Fundamentals',
+      tier: 'Architecture & Product',
+      level: 'Strong',
+      howIUseIt: 'Product Scoping, UX Polish & Shipped Systems',
       depthLevel: 'Production / Architecture',
       shortDescription: 'Bridging user experience, business objectives, technical feasibility, rapid prototyping, and iterative telemetry.',
       whatIsIt: {
@@ -2253,6 +2358,9 @@ export function trackFeatureInteraction(feature: string, metadata: Record<string
       id: 'embedded-c-c',
       name: 'Embedded C/C++',
       category: 'Engineering Fundamentals',
+      tier: 'Hands-on Development',
+      level: 'Applied / Working',
+      howIUseIt: 'Microcontroller Sensor Sampling Loops',
       depthLevel: 'Applied / Production',
       shortDescription: 'Microcontroller architecture, direct register manipulation, hardware interrupts (ISR), memory layout, and 1kHz ADC sampling.',
       whatIsIt: {
@@ -2317,6 +2425,9 @@ void __attribute__((interrupt)) TIMER1_COMPA_vect() {
       id: 'signal-processing',
       name: 'Signal Processing',
       category: 'Engineering Fundamentals',
+      tier: 'Technology Familiarity',
+      level: 'Familiar / Working',
+      howIUseIt: 'Sampling Theory & Visual Oscilloscopes',
       depthLevel: 'Applied / Production',
       shortDescription: 'Nyquist sampling theorem, Fast Fourier Transform (FFT), digital filtering (FIR/IIR), noise reduction, and frequency-domain analysis.',
       whatIsIt: {

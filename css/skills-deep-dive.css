@@ -105,6 +105,25 @@
   color: #22c55e;
 }
 
+.skill-how-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.skill-how-badge::before {
+  content: "⚡";
+  font-size: 0.65rem;
+}
+
 .skill-modal-title {
   font-family: var(--font-heading);
   font-size: 1.85rem;

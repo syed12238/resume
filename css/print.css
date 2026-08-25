@@ -264,4 +264,55 @@
     font-size: 0.68rem !important;
     color: #6b7280 !important;
   }
+
+  /* AI-Native Capability Card in Print */
+  .ai-native-capability-card {
+    background: #ffffff !important;
+    border: 0.75pt solid #e5e7eb !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    margin: 10px 0 !important;
+    page-break-inside: avoid !important;
+  }
+
+  .ai-native-card-title {
+    font-size: 0.96rem !important;
+    color: #000000 !important;
+  }
+
+  .ai-native-card-subtitle {
+    font-size: 0.78rem !important;
+    color: #4b5563 !important;
+  }
+
+  .ai-native-card-lead {
+    font-size: 0.78rem !important;
+    color: #1f2937 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .ai-native-pillars-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  .ai-pillar-item {
+    background: #f9fafb !important;
+    border: 0.5pt solid #e5e7eb !important;
+    border-radius: 4px !important;
+    padding: 6px 8px !important;
+  }
+
+  .ai-pillar-name {
+    font-size: 0.74rem !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  .ai-pillar-desc {
+    font-size: 0.68rem !important;
+    color: #4b5563 !important;
+    line-height: 1.3 !important;
+  }
 }

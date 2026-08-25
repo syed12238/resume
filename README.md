@@ -21,4 +21,4 @@ To run locally with Node.js:
 ```bash
 node server.js
 ```
-Then open [http://localhost:3000](http://localhost:3000) in your browser.
+Then open [http://localhost:3001](http://localhost:3001) (or your Wi-Fi IP address shown in terminal) in your browser.

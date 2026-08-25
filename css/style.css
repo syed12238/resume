@@ -842,6 +842,210 @@ button {
   box-shadow: 0 4px 10px rgba(194, 149, 56, 0.12);
 }
 
+/* AI-Native Engineering Capability Showcase Card */
+.ai-native-capability-card {
+  background: linear-gradient(145deg, #0d1117 0%, #151b26 100%);
+  border: 1px solid rgba(194, 149, 56, 0.35);
+  border-radius: var(--radius-card);
+  padding: 24px 26px;
+  color: #ffffff;
+  box-shadow: 0 16px 45px -10px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--spring-bounce);
+}
+
+.ai-native-capability-card::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(194, 149, 56, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ai-native-capability-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(194, 149, 56, 0.6);
+  box-shadow: 0 22px 55px -10px rgba(0, 0, 0, 0.45), 0 0 25px rgba(194, 149, 56, 0.15);
+}
+
+.ai-native-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ai-native-card-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 680px;
+}
+
+.ai-native-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.70rem;
+  font-weight: 700;
+  color: var(--accent-gold-light);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ai-native-title {
+  font-family: var(--font-heading);
+  font-size: 1.30rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.ai-native-subtext {
+  font-size: 0.86rem;
+  color: #94a3b8;
+  line-height: 1.55;
+}
+
+.ai-native-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(194, 149, 56, 0.15);
+  border: 1px solid rgba(194, 149, 56, 0.4);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #f1c97a;
+  white-space: nowrap;
+}
+
+.ai-native-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+.ai-pillar-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  transition: all var(--spring-bounce);
+}
+
+.ai-pillar-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(194, 149, 56, 0.35);
+  transform: translateY(-2px);
+}
+
+.ai-pillar-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(194, 149, 56, 0.15);
+  border: 1px solid rgba(194, 149, 56, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent-gold-light);
+  font-size: 0.85rem;
+}
+
+.ai-pillar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ai-pillar-title {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.ai-pillar-desc {
+  font-size: 0.74rem;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+/* Skills Tier Legend Bar */
+.skills-tier-legend-bar {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.skill-tier-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-tier-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.tier-strong {
+  background: #16a34a;
+  box-shadow: 0 0 8px rgba(22, 163, 74, 0.5);
+}
+
+.tier-applied {
+  background: var(--accent-gold);
+  box-shadow: 0 0 8px rgba(194, 149, 56, 0.5);
+}
+
+.tier-working {
+  background: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+.skill-tier-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-tier-name {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-title);
+}
+
+.skill-tier-status {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
 /* Luxury Profile Photo Showcase Card */
 .profile-photo-card {
   background: linear-gradient(145deg, #ffffff 0%, #f6f8fb 100%);
