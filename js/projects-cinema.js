@@ -77,7 +77,7 @@
           <div class="cinema-top-right-group">
             <span class="cinema-keyboard-hint">← / → to browse · Esc to exit</span>
             <div class="cinema-counter-badge" id="cinema-counter-badge">
-              <span class="current">${initialProject.number}</span> / <span class="total">0${data.length}</span>
+              <span class="current">${initialProject.number}</span> / <span class="total">${String(data.length).padStart(2, '0')}</span>
             </div>
           </div>
         </header>
@@ -389,7 +389,7 @@
 
     // 4. Update Top Counter
     if (counterBadge) {
-      counterBadge.innerHTML = `<span class="current">${proj.number}</span> / <span class="total">0${data.length}</span>`;
+      counterBadge.innerHTML = `<span class="current">${proj.number}</span> / <span class="total">${String(data.length).padStart(2, '0')}</span>`;
     }
 
     // 5. Replace Hero Visual & Typography after micro-delay

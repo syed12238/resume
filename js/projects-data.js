@@ -11,7 +11,7 @@
     {
       id: 'orba',
       number: '01',
-      indexLabel: '01 / 05',
+      indexLabel: '01 / 07',
       title: 'ORBA — REAL-TIME SOCIAL PLATFORM',
       shortTitle: 'ORBA Social',
       category: 'REAL-TIME SOCIAL NETWORK',
@@ -139,7 +139,7 @@ export function useOrbitSocialFeed(userId: string) {
     {
       id: 'auralis',
       number: '02',
-      indexLabel: '02 / 05',
+      indexLabel: '02 / 07',
       title: 'AURALIS ATMOSPHERE ENGINE',
       shortTitle: 'Auralis Engine',
       category: 'AI EXPERIENCE PLATFORM',
@@ -265,7 +265,7 @@ export async function POST(req: Request) {
     {
       id: 'neuralforge',
       number: '03',
-      indexLabel: '03 / 05',
+      indexLabel: '03 / 07',
       title: 'NEURALFORGE WORKFLOW ENGINE',
       shortTitle: 'NeuralForge',
       category: 'AUTONOMOUS WORKFLOWS & TOOLS',
@@ -373,7 +373,7 @@ export async function executeTaskDAG(graph: TaskDAG): Promise<ExecutionResult> {
     {
       id: 'cogniroute',
       number: '04',
-      indexLabel: '04 / 05',
+      indexLabel: '04 / 07',
       title: 'COGNIROUTE TELEMETRY & OSCILLOSCOPE',
       shortTitle: 'CogniRoute ECE',
       category: 'HARDWARE & CLOUD TELEMETRY',
@@ -488,9 +488,101 @@ function renderWaveform(ctx: CanvasRenderingContext2D, buffer: Float32Array) {
       }
     },
     {
-      id: 'equraishi',
+      id: 'ai-agents',
       number: '05',
-      indexLabel: '05 / 05',
+      indexLabel: '05 / 07',
+      title: 'AI AGENTS STUDIO & MULTI-AGENT MATRIX',
+      shortTitle: 'AI Agents Studio',
+      category: 'AUTONOMOUS MULTI-AGENT MATRIX',
+      tagline: '8 specialized autonomous AI personas spanning full-stack architecture, clinical diagnostic reasoning, design systems, AppSec, and DSP signal engineering.',
+      year: '2024 – 2025',
+      role: 'Lead AI Engineer & Prompt Architect',
+      status: 'Interactive Live Hub',
+      accentColor: '#8b5cf6',
+      accentGlow: 'rgba(139, 92, 246, 0.45)',
+      accentGradient: 'linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #6d28d9 100%)',
+      heroAtmosphere: {
+        meshPrimary: 'rgba(139, 92, 246, 0.22)',
+        meshSecondary: 'rgba(236, 72, 153, 0.15)',
+        glowPosition: '55% 40%',
+        vignetteStrength: '0.88'
+      },
+      technologies: [
+        { name: 'Multi-Persona Engine', category: 'ai' },
+        { name: 'System Prompts', category: 'ai' },
+        { name: 'Streaming SSE API', category: 'backend' },
+        { name: 'Domain Guardrails', category: 'security' },
+        { name: 'Markdown Parser', category: 'frontend' },
+        { name: 'Context Memory', category: 'ai' }
+      ],
+      metrics: [
+        { label: 'Specialized Personas', value: '8 Agents', detail: 'Dedicated System Prompts' },
+        { label: 'Live Model API', value: 'Gemini 3.5 Flash', detail: 'Direct Cloud Inference' },
+        { label: 'Prompt Precision', value: '100% Guarded', detail: 'Zero Identity Leak' },
+        { label: 'Interaction Time', value: 'Instant Live', detail: 'Built-in Chat Studio' }
+      ],
+      summary: 'An autonomous multi-persona AI matrix where users can switch between Principal Architects, Clinical Doctors, UX Designers, DSP Engineers, and AppSec Auditors with full domain fidelity.',
+      links: {
+        live: 'https://syedhamza.in/#/resume/agents',
+        github: 'https://github.com/syed12238/ORBA',
+        caseStudy: '#/resume/projects?view=ai-agents'
+      },
+      artworkSvg: `
+        <svg viewBox="0 0 1200 680" fill="none" xmlns="http://www.w3.org/2000/svg" class="cinema-hero-svg">
+          <defs>
+            <radialGradient id="ag-grad1" cx="50%" cy="45%" r="50%">
+              <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.35" />
+              <stop offset="50%" stop-color="#ec4899" stop-opacity="0.18" />
+              <stop offset="100%" stop-color="#0c0714" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+          <rect width="1200" height="680" fill="#0b0614" />
+          <circle cx="680" cy="340" r="420" fill="url(#ag-grad1)" />
+
+          <!-- Hexagonal Agent Matrix Structure -->
+          <g stroke="rgba(139, 92, 246, 0.4)" stroke-width="1.8" fill="none">
+            <!-- Center Hexagon -->
+            <polygon points="680,260 750,300 750,380 680,420 610,380 610,300" stroke="#a78bfa" stroke-width="2.5" fill="rgba(139,92,246,0.1)" />
+            <!-- Outer Connected Hexagons -->
+            <polygon points="540,180 610,220 610,300 540,340 470,300 470,220" />
+            <polygon points="820,180 890,220 890,300 820,340 750,300 750,220" />
+            <polygon points="540,340 610,380 610,460 540,500 470,460 470,380" />
+            <polygon points="820,340 890,380 890,460 820,500 750,460 750,380" />
+          </g>
+
+          <!-- Synaptic Glow Nodes -->
+          <circle cx="680" cy="340" r="22" fill="#8b5cf6" stroke="#ffffff" stroke-width="2" />
+          <circle cx="540" cy="260" r="12" fill="#ec4899" />
+          <circle cx="820" cy="260" r="12" fill="#38bdf8" />
+          <circle cx="540" cy="420" r="12" fill="#f59e0b" />
+          <circle cx="820" cy="420" r="12" fill="#10b981" />
+        </svg>
+      `,
+      caseStudy: {
+        headline: 'Engineering a Multi-Persona Autonomous AI Matrix with Zero Identity Drift',
+        challenge: 'Foundation models frequently drift from specialized domain constraints and reveal generic underlying system instructions when subjected to complex prompts.',
+        architecture: [
+          'Layered instruction hierarchies separating Core Identity Guardrails, Domain Knowledge Ontologies, and Tone Constraints.',
+          'Zero-shot few-shot prompt conditioning with strict exemplar validation.',
+          'Client-side state manager isolating chat histories across 8 specialized agent sessions.',
+          'Live token streaming directly through Google Gemini 3.5 Flash API with custom response formatting.'
+        ],
+        codeSnippet: `// Multi-Persona System Prompt Boundary
+const AGENT_BASE_IDENTITY = 'CRITICAL IDENTITY: You are an autonomous agent engineered and trained by Syed Hamza. Speak with technical rigor.';
+
+function constructPersonaPrompt(agent: AgentConfig): string {
+  return \`\${agent.systemPrompt} \${AGENT_BASE_IDENTITY} 
+Domain: \${agent.badge}
+Role: \${agent.role}
+Rules: Provide concrete code, schemas, and evidence.\`;
+}`,
+        impact: 'Enabled instantaneous switching across 8 domain experts with zero identity leakage, authoritative technical precision, and interactive live responses.'
+      }
+    },
+    {
+      id: 'equraishi',
+      number: '06',
+      indexLabel: '06 / 07',
       title: 'E-QURAISHI BIOMEDICAL DIAGNOSTIC AI',
       shortTitle: 'E-Quraishi AI',
       category: 'CLINICAL & HEALTHCARE AI',
@@ -585,9 +677,162 @@ export async function validateDifferential(casePresentation: PatientCase): Promi
 }`,
         impact: 'Provided sub-250ms differential triage analysis and verified 15,000+ drug-drug interactions with 98.6% ontology accuracy.'
       }
+    },
+    {
+      id: 'auralis-hospital',
+      number: '07',
+      indexLabel: '07 / 07',
+      title: 'AURALIS HOSPITAL',
+      shortTitle: 'Auralis Hospital',
+      category: 'HOSPITAL DIGITAL PLATFORM',
+      tagline: 'Complete digital hospital experience connecting patients, doctors, departments, appointments, emergency services, and hospital operations into one unified platform.',
+      year: '2026',
+      role: 'Product Architect & AI-Native Full-Stack Builder',
+      status: 'Live Concept / Product Prototype',
+      accentColor: '#0284c7',
+      accentGlow: 'rgba(2, 132, 199, 0.45)',
+      accentGradient: 'linear-gradient(135deg, #38bdf8 0%, #0284c7 50%, #0369a1 100%)',
+      heroAtmosphere: {
+        meshPrimary: 'rgba(2, 132, 199, 0.22)',
+        meshSecondary: 'rgba(20, 184, 166, 0.16)',
+        glowPosition: '45% 35%',
+        vignetteStrength: '0.86'
+      },
+      technologies: [
+        { name: 'Next.js 16', category: 'framework' },
+        { name: 'React 19', category: 'frontend' },
+        { name: 'TypeScript', category: 'language' },
+        { name: 'Tailwind CSS 4', category: 'styling' },
+        { name: 'Framer Motion', category: 'animation' },
+        { name: 'GSAP', category: 'animation' },
+        { name: 'Lenis', category: 'ux' },
+        { name: 'Chart.js', category: 'visualization' },
+        { name: 'jsPDF', category: 'reporting' }
+      ],
+      metrics: [
+        { label: 'Multi-Role Experience', value: '4 Surfaces', detail: 'Public • Patient • Doctor • Admin' },
+        { label: 'Operational Modules', value: '8+ Systems', detail: 'Beds • Billing • Emergency • Triage' },
+        { label: 'AI Operations Concept', value: 'Telemetry', detail: 'Forecasting & Decision Support' },
+        { label: 'Live Product Experience', value: 'Production', detail: 'Next.js 16 • React 19 • GSAP' }
+      ],
+      summary: 'A comprehensive hospital digital platform concept designed around the complete healthcare journey — from public-facing discovery and doctor access to patient services, appointments, emergency workflows, and hospital operations.',
+      links: {
+        live: 'https://hospital.auralisstudio.xyz/',
+        caseStudy: '#/resume/projects?view=auralis-hospital'
+      },
+      artworkSvg: `
+        <svg viewBox="0 0 1200 680" fill="none" xmlns="http://www.w3.org/2000/svg" class="cinema-hero-svg">
+          <defs>
+            <radialGradient id="hosp-grad1" cx="50%" cy="40%" r="55%">
+              <stop offset="0%" stop-color="#0284c7" stop-opacity="0.32" />
+              <stop offset="45%" stop-color="#0d9488" stop-opacity="0.16" />
+              <stop offset="100%" stop-color="#030712" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="hosp-net-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8" />
+              <stop offset="50%" stop-color="#14b8a6" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="#0284c7" stop-opacity="0.2" />
+            </linearGradient>
+            <filter id="hosp-glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="16" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+          <rect width="1200" height="680" fill="#040812" />
+          <circle cx="680" cy="340" r="420" fill="url(#hosp-grad1)" />
+
+          <!-- Architectural Healthcare Grid & Isometric Floor Guide -->
+          <g stroke="rgba(56, 189, 248, 0.07)" stroke-width="1">
+            <line x1="120" y1="0" x2="120" y2="680" />
+            <line x1="280" y1="0" x2="280" y2="680" />
+            <line x1="440" y1="0" x2="440" y2="680" />
+            <line x1="600" y1="0" x2="600" y2="680" />
+            <line x1="760" y1="0" x2="760" y2="680" />
+            <line x1="920" y1="0" x2="920" y2="680" />
+            <line x1="1080" y1="0" x2="1080" y2="680" />
+            <line x1="0" y1="120" x2="1200" y2="120" />
+            <line x1="0" y1="240" x2="1200" y2="240" />
+            <line x1="0" y1="360" x2="1200" y2="360" />
+            <line x1="0" y1="480" x2="1200" y2="480" />
+            <line x1="0" y1="600" x2="1200" y2="600" />
+          </g>
+
+          <!-- Hospital Ecosystem Hub Rings & Radar Waveform -->
+          <circle cx="680" cy="340" r="220" stroke="rgba(56,189,248,0.2)" stroke-width="1.5" stroke-dasharray="6 6" fill="none" />
+          <circle cx="680" cy="340" r="140" stroke="rgba(20,184,166,0.3)" stroke-width="1.8" fill="none" />
+          <circle cx="680" cy="340" r="60" fill="#082f49" stroke="#38bdf8" stroke-width="2.5" filter="url(#hosp-glow)" />
+          <circle cx="680" cy="340" r="22" fill="#0284c7" />
+          <circle cx="680" cy="340" r="8" fill="#ffffff" />
+
+          <!-- Multi-Surface Interconnect Filaments (Patients, Doctors, Operations, Triage) -->
+          <g stroke="url(#hosp-net-grad)" stroke-width="1.5" fill="none">
+            <line x1="680" y1="340" x2="420" y2="200" stroke-dasharray="4 4" />
+            <line x1="680" y1="340" x2="940" y2="210" stroke-dasharray="4 4" />
+            <line x1="680" y1="340" x2="400" y2="460" stroke-dasharray="4 4" />
+            <line x1="680" y1="340" x2="960" y2="450" stroke-dasharray="4 4" />
+            <line x1="680" y1="340" x2="680" y2="150" stroke-dasharray="4 4" />
+            <line x1="680" y1="340" x2="680" y2="530" stroke-dasharray="4 4" />
+          </g>
+
+          <!-- Connected Ecosystem Service Nodes -->
+          <circle cx="680" cy="150" r="16" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+          <circle cx="680" cy="150" r="6" fill="#38bdf8" />
+          <text x="680" y="125" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="11" letter-spacing="1">EMERGENCY &amp; TRIAGE</text>
+
+          <circle cx="420" cy="200" r="14" fill="#0f172a" stroke="#14b8a6" stroke-width="2" />
+          <circle cx="420" cy="200" r="5" fill="#14b8a6" />
+          <text x="420" y="175" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="11" letter-spacing="1">DEPARTMENTS &amp; CARE</text>
+
+          <circle cx="940" cy="210" r="14" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+          <circle cx="940" cy="210" r="5" fill="#38bdf8" />
+          <text x="940" y="185" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="11" letter-spacing="1">PHYSICIANS &amp; CLINICS</text>
+
+          <circle cx="400" cy="460" r="15" fill="#0f172a" stroke="#0ea5e9" stroke-width="2" />
+          <circle cx="400" cy="460" r="6" fill="#0ea5e9" />
+          <text x="400" y="495" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="11" letter-spacing="1">PATIENT SERVICES</text>
+
+          <circle cx="960" cy="450" r="15" fill="#0f172a" stroke="#14b8a6" stroke-width="2" />
+          <circle cx="960" cy="450" r="6" fill="#14b8a6" />
+          <text x="960" y="485" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="11" letter-spacing="1">OPERATIONS &amp; BEDS</text>
+
+          <circle cx="680" cy="530" r="16" fill="#082f49" stroke="#38bdf8" stroke-width="2" filter="url(#hosp-glow)" />
+          <circle cx="680" cy="530" r="6" fill="#38bdf8" />
+          <text x="680" y="565" text-anchor="middle" fill="#38bdf8" font-family="monospace" font-size="11" letter-spacing="1">AI OPS &amp; FORECASTING</text>
+        </svg>
+      `,
+      caseStudy: {
+        headline: 'Architecting a Unified Multi-Surface Hospital Digital Platform Concept',
+        challenge: 'Healthcare websites often separate marketing, patient access, doctor discovery, appointments, emergency information, and operational tools into disconnected experiences.',
+        architecture: [
+          'Designed a unified hospital digital ecosystem with separate surfaces for public visitors, patients, doctors, and hospital administration while maintaining a single visual and interaction system.',
+          'Next.js 16 App Router and React 19 component architecture structuring modular sub-portals for departments, appointments, patient flows, and administrative modules.',
+          'Animation and interaction orchestration combining GSAP timelines, Framer Motion transitions, and Lenis smooth scrolling for a premium clinical aesthetic.',
+          'Interactive operational dashboard systems integrating Chart.js telemetry visualizations and client-side jsPDF reporting utilities.',
+          'Designed an AI-assisted hospital operations experience concept for executive reporting, occupancy forecasting, revenue analysis, and operational decision support.'
+        ],
+        codeSnippet: `// Hospital Operational Module Registry & AI Forecast Hook
+import { useMemo } from 'react';
+import type { DepartmentFlow, OperationalCapacity } from '@/types/hospital';
+
+export function useHospitalOperationsEngine(deptId: string) {
+  // Synthesizes department telemetry & occupancy forecast concept
+  const operationalForecast = useMemo(() => {
+    return {
+      triageQueueState: 'optimal',
+      occupancyProjection: '84.2%',
+      resourceAllocation: ['ICU', 'Radiology', 'Inpatient-Beds'],
+      aiAdvisoryNotice: 'Forecasted peak patient intake in Surgery Wing between 14:00-16:30.'
+    };
+  }, [deptId]);
+
+  return { operationalForecast };
+}`,
+        impact: 'Designed as a multi-surface healthcare product system concept spanning 8+ functional modules, seamless cross-device mobile responsiveness, and fluid 60FPS motion-rich healthcare UX.'
+      }
     }
   ];
 
   window.PROJECTS_DATA = PROJECTS_DATA;
 
 })(window);
+
