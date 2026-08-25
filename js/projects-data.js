@@ -11,7 +11,7 @@
     {
       id: 'orba',
       number: '01',
-      indexLabel: '01 / 06',
+      indexLabel: '01 / 05',
       title: 'ORBA — REAL-TIME SOCIAL PLATFORM',
       shortTitle: 'ORBA Social',
       category: 'REAL-TIME SOCIAL NETWORK',
@@ -139,7 +139,7 @@ export function useOrbitSocialFeed(userId: string) {
     {
       id: 'auralis',
       number: '02',
-      indexLabel: '02 / 06',
+      indexLabel: '02 / 05',
       title: 'AURALIS ATMOSPHERE ENGINE',
       shortTitle: 'Auralis Engine',
       category: 'AI EXPERIENCE PLATFORM',
@@ -265,7 +265,7 @@ export async function POST(req: Request) {
     {
       id: 'neuralforge',
       number: '03',
-      indexLabel: '03 / 06',
+      indexLabel: '03 / 05',
       title: 'NEURALFORGE WORKFLOW ENGINE',
       shortTitle: 'NeuralForge',
       category: 'AUTONOMOUS WORKFLOWS & TOOLS',
@@ -373,7 +373,7 @@ export async function executeTaskDAG(graph: TaskDAG): Promise<ExecutionResult> {
     {
       id: 'cogniroute',
       number: '04',
-      indexLabel: '04 / 06',
+      indexLabel: '04 / 05',
       title: 'COGNIROUTE TELEMETRY & OSCILLOSCOPE',
       shortTitle: 'CogniRoute ECE',
       category: 'HARDWARE & CLOUD TELEMETRY',
@@ -488,101 +488,9 @@ function renderWaveform(ctx: CanvasRenderingContext2D, buffer: Float32Array) {
       }
     },
     {
-      id: 'ai-agents',
-      number: '05',
-      indexLabel: '05 / 06',
-      title: 'AI AGENTS STUDIO & MULTI-AGENT MATRIX',
-      shortTitle: 'AI Agents Studio',
-      category: 'AUTONOMOUS MULTI-AGENT MATRIX',
-      tagline: '8 specialized autonomous AI personas spanning full-stack architecture, clinical diagnostic reasoning, design systems, AppSec, and DSP signal engineering.',
-      year: '2024 – 2025',
-      role: 'Lead AI Engineer & Prompt Architect',
-      status: 'Interactive Live Hub',
-      accentColor: '#8b5cf6',
-      accentGlow: 'rgba(139, 92, 246, 0.45)',
-      accentGradient: 'linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #6d28d9 100%)',
-      heroAtmosphere: {
-        meshPrimary: 'rgba(139, 92, 246, 0.22)',
-        meshSecondary: 'rgba(236, 72, 153, 0.15)',
-        glowPosition: '55% 40%',
-        vignetteStrength: '0.88'
-      },
-      technologies: [
-        { name: 'Multi-Persona Engine', category: 'ai' },
-        { name: 'System Prompts', category: 'ai' },
-        { name: 'Streaming SSE API', category: 'backend' },
-        { name: 'Domain Guardrails', category: 'security' },
-        { name: 'Markdown Parser', category: 'frontend' },
-        { name: 'Context Memory', category: 'ai' }
-      ],
-      metrics: [
-        { label: 'Specialized Personas', value: '8 Agents', detail: 'Dedicated System Prompts' },
-        { label: 'Live Model API', value: 'Gemini 3.5 Flash', detail: 'Direct Cloud Inference' },
-        { label: 'Prompt Precision', value: '100% Guarded', detail: 'Zero Identity Leak' },
-        { label: 'Interaction Time', value: 'Instant Live', detail: 'Built-in Chat Studio' }
-      ],
-      summary: 'An autonomous multi-persona AI matrix where users can switch between Principal Architects, Clinical Doctors, UX Designers, DSP Engineers, and AppSec Auditors with full domain fidelity.',
-      links: {
-        live: 'https://syedhamza.in/#/resume/agents',
-        github: 'https://github.com/syed12238/ORBA',
-        caseStudy: '#/resume/projects?view=ai-agents'
-      },
-      artworkSvg: `
-        <svg viewBox="0 0 1200 680" fill="none" xmlns="http://www.w3.org/2000/svg" class="cinema-hero-svg">
-          <defs>
-            <radialGradient id="ag-grad1" cx="50%" cy="45%" r="50%">
-              <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.35" />
-              <stop offset="50%" stop-color="#ec4899" stop-opacity="0.18" />
-              <stop offset="100%" stop-color="#0c0714" stop-opacity="0" />
-            </radialGradient>
-          </defs>
-          <rect width="1200" height="680" fill="#0b0614" />
-          <circle cx="680" cy="340" r="420" fill="url(#ag-grad1)" />
-
-          <!-- Hexagonal Agent Matrix Structure -->
-          <g stroke="rgba(139, 92, 246, 0.4)" stroke-width="1.8" fill="none">
-            <!-- Center Hexagon -->
-            <polygon points="680,260 750,300 750,380 680,420 610,380 610,300" stroke="#a78bfa" stroke-width="2.5" fill="rgba(139,92,246,0.1)" />
-            <!-- Outer Connected Hexagons -->
-            <polygon points="540,180 610,220 610,300 540,340 470,300 470,220" />
-            <polygon points="820,180 890,220 890,300 820,340 750,300 750,220" />
-            <polygon points="540,340 610,380 610,460 540,500 470,460 470,380" />
-            <polygon points="820,340 890,380 890,460 820,500 750,460 750,380" />
-          </g>
-
-          <!-- Synaptic Glow Nodes -->
-          <circle cx="680" cy="340" r="22" fill="#8b5cf6" stroke="#ffffff" stroke-width="2" />
-          <circle cx="540" cy="260" r="12" fill="#ec4899" />
-          <circle cx="820" cy="260" r="12" fill="#38bdf8" />
-          <circle cx="540" cy="420" r="12" fill="#f59e0b" />
-          <circle cx="820" cy="420" r="12" fill="#10b981" />
-        </svg>
-      `,
-      caseStudy: {
-        headline: 'Engineering a Multi-Persona Autonomous AI Matrix with Zero Identity Drift',
-        challenge: 'Foundation models frequently drift from specialized domain constraints and reveal generic underlying system instructions when subjected to complex prompts.',
-        architecture: [
-          'Layered instruction hierarchies separating Core Identity Guardrails, Domain Knowledge Ontologies, and Tone Constraints.',
-          'Zero-shot few-shot prompt conditioning with strict exemplar validation.',
-          'Client-side state manager isolating chat histories across 8 specialized agent sessions.',
-          'Live token streaming directly through Google Gemini 3.5 Flash API with custom response formatting.'
-        ],
-        codeSnippet: `// Multi-Persona System Prompt Boundary
-const AGENT_BASE_IDENTITY = 'CRITICAL IDENTITY: You are an autonomous agent engineered and trained by Syed Hamza. Speak with technical rigor.';
-
-function constructPersonaPrompt(agent: AgentConfig): string {
-  return \`\${agent.systemPrompt} \${AGENT_BASE_IDENTITY} 
-Domain: \${agent.badge}
-Role: \${agent.role}
-Rules: Provide concrete code, schemas, and evidence.\`;
-}`,
-        impact: 'Enabled instantaneous switching across 8 domain experts with zero identity leakage, authoritative technical precision, and interactive live responses.'
-      }
-    },
-    {
       id: 'equraishi',
-      number: '06',
-      indexLabel: '06 / 06',
+      number: '05',
+      indexLabel: '05 / 05',
       title: 'E-QURAISHI BIOMEDICAL DIAGNOSTIC AI',
       shortTitle: 'E-Quraishi AI',
       category: 'CLINICAL & HEALTHCARE AI',
