@@ -2327,40 +2327,54 @@ button {
 
 @media screen and (max-width: 900px) {
   body {
-    padding: 0 0 76px 0;
-    background: #f0f2f6;
+    padding: 0 0 calc(96px + env(safe-area-inset-bottom, 0px)) 0;
+    background-color: #f1f4f9;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(194, 149, 56, 0.06) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.05) 0px, transparent 50%);
+    background-attachment: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
   }
 
+  /* 1. Mobile Frosted Glass Top Header */
   .mobile-top-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 200;
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    padding: 10px 16px;
-    border-bottom: 1px solid var(--border-subtle);
+    z-index: 500;
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: max(12px, env(safe-area-inset-top, 12px)) 18px 12px 18px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
     width: 100%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.04);
   }
 
   .mobile-brand-group {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 11px;
     cursor: pointer;
+    user-select: none;
+  }
+
+  .mobile-brand-group:active {
+    opacity: 0.8;
   }
 
   .mobile-avatar-thumb {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.14);
     flex-shrink: 0;
   }
 
@@ -2374,23 +2388,25 @@ button {
   .mobile-brand-info {
     display: flex;
     flex-direction: column;
+    gap: 2px;
   }
 
   .mobile-brand-name {
     font-family: var(--font-heading);
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     font-weight: 800;
     color: var(--text-title);
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 5px;
     line-height: 1.2;
   }
 
   .mobile-brand-title {
     font-size: 0.72rem;
     color: var(--accent-gold-dark);
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 0.01em;
   }
 
   .mobile-header-actions {
@@ -2400,8 +2416,8 @@ button {
   }
 
   .mobile-action-btn {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     background: var(--surface-elevated);
     border: 1px solid var(--border-subtle);
@@ -2409,12 +2425,14 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all var(--transition-fast);
+    transition: all var(--spring-bounce);
+    cursor: pointer;
   }
 
   .mobile-action-btn:active {
-    background: #ffffff;
-    transform: scale(0.95);
+    background: #0f131a;
+    color: #ffffff;
+    transform: scale(0.92);
   }
 
   .mobile-pill-strip {
@@ -2425,29 +2443,32 @@ button {
     display: none !important;
   }
 
+  /* 2. App Shell & Main Content */
   .app-shell {
     position: static;
     z-index: auto;
     grid-template-columns: 1fr;
     gap: 0;
     min-height: auto;
-    padding: 12px 12px 0 12px;
+    padding: 14px 14px 0 14px;
+    width: 100%;
   }
 
+  /* 3. Slide-Over Profile Drawer */
   .profile-sidebar {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 320px;
+    width: 330px;
     max-width: 86vw;
-    z-index: 1060 !important; /* Strictly higher than backdrop (1040) */
+    z-index: 1060 !important;
     transform: translateX(-105%) !important;
-    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    border-radius: 0 24px 24px 0;
-    box-shadow: 14px 0 50px rgba(0, 0, 0, 0.45);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    border-radius: 0 28px 28px 0;
+    box-shadow: 18px 0 60px rgba(0, 0, 0, 0.45);
     background: #ffffff !important;
-    padding: 24px 18px 100px 18px; /* Extra bottom padding so items aren't cut off by dock */
+    padding: max(20px, env(safe-area-inset-top, 20px)) 18px calc(120px + env(safe-area-inset-bottom, 0px)) 18px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     animation: none !important;
@@ -2462,20 +2483,20 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: var(--surface-elevated);
     border: 1px solid var(--border-subtle);
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     line-height: 1;
     color: var(--text-title);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: all var(--spring-bounce);
   }
 
   .sidebar-close-btn:active {
-    transform: scale(0.92);
+    transform: scale(0.90);
     background: #0f131a;
     color: #ffffff;
   }
@@ -2484,13 +2505,13 @@ button {
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(15, 19, 26, 0.60);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(15, 19, 26, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     z-index: 1040;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.32s ease;
   }
 
   .sidebar-backdrop.active {
@@ -2498,11 +2519,13 @@ button {
     pointer-events: auto;
   }
 
+  /* 4. Main Resume Card */
   .main-content-card {
-    border-radius: 20px;
-    padding: 20px 16px 105px 16px;
-    gap: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 24px;
+    padding: 24px 18px calc(110px + env(safe-area-inset-bottom, 0px)) 18px;
+    gap: 22px;
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.06);
   }
 
   .main-top-bar {
@@ -2511,24 +2534,25 @@ button {
 
   .overview-hero-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 18px;
     text-align: left;
   }
 
+  /* Profile Photo Card */
   .profile-photo-card {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 12px 14px;
-    gap: 12px;
-    border-radius: 18px;
+    padding: 14px 16px;
+    gap: 14px;
+    border-radius: 20px;
     width: 100%;
     box-sizing: border-box;
   }
 
   .photo-circle-wrapper {
-    width: 62px;
-    height: 62px;
+    width: 66px;
+    height: 66px;
     flex-shrink: 0;
   }
 
@@ -2542,19 +2566,19 @@ button {
   }
 
   .photo-card-name {
-    font-size: 1.02rem;
+    font-size: 1.08rem;
     font-weight: 800;
     line-height: 1.2;
   }
 
   .photo-status-badge {
-    font-size: 0.68rem;
-    padding: 2px 7px;
+    font-size: 0.70rem;
+    padding: 3px 8px;
     white-space: nowrap;
   }
 
   .photo-location-pill {
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     white-space: normal;
     word-break: break-word;
     line-height: 1.3;
@@ -2562,133 +2586,162 @@ button {
 
   .photo-card-actions {
     display: flex;
-    gap: 6px;
+    gap: 8px;
     width: 100%;
-    padding-top: 4px;
+    padding-top: 6px;
     border-top: 1px solid var(--border-subtle);
   }
 
   .hero-candidate-name {
-    font-size: 1.95rem;
-    letter-spacing: -0.02em;
+    font-size: 1.85rem;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
   }
 
   .hero-primary-title {
-    font-size: 1rem;
+    font-size: 1.02rem;
   }
 
   .hero-positioning-line {
-    font-size: 0.80rem;
+    font-size: 0.82rem;
   }
 
   .hero-summary-paragraph {
-    font-size: 0.86rem;
-    line-height: 1.5;
+    font-size: 0.88rem;
+    line-height: 1.6;
   }
 
   .contact-pills-row {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
   }
 
   .contact-pill {
-    padding: 8px 12px;
-    font-size: 0.82rem;
+    padding: 10px 14px;
+    font-size: 0.84rem;
     width: 100%;
     justify-content: flex-start;
+    border-radius: 14px;
   }
 
+  .contact-pill:active {
+    transform: scale(0.98);
+    background: var(--surface-elevated);
+  }
+
+  /* Snapshot Telemetry 2x2 Grid */
   .snapshot-cards-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
   .snapshot-card {
-    padding: 10px 12px;
-    gap: 8px;
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 16px;
   }
 
   .snapshot-icon-box {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
   }
 
   .snapshot-value {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
   }
 
   .overview-trio-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
   }
 
   .btn-card-dark,
   .btn-gold-large {
     width: 100%;
     justify-content: center;
-    padding: 12px 16px;
+    padding: 13px 18px;
+    border-radius: 9999px;
+    font-size: 0.86rem;
   }
 
   .projects-grid,
   .skills-category-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .subpage-title {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
+    font-weight: 800;
+  }
+
+  .subpage-subtitle {
+    font-size: 0.86rem;
+    line-height: 1.5;
   }
 
   .proj-btn-row {
     flex-direction: column;
+    gap: 8px;
   }
 
   .btn-sidebar-dark,
   .btn-sidebar-light {
     width: 100%;
+    padding: 12px 16px;
+    border-radius: 9999px;
   }
 
   .playground-box {
-    padding: 16px;
+    padding: 18px;
+    border-radius: 18px;
   }
 
   .ai-capabilities-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .ai-depth-header-row {
     flex-direction: column-reverse;
+    gap: 12px;
   }
 
   .ai-hours-stat-badge {
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
-    padding: 8px 14px;
+    padding: 10px 16px;
+    border-radius: 14px;
   }
 
+  /* 5. Mobile Floating Luxury Dock (iOS / VisionOS Style) */
   .mobile-bottom-dock {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     position: fixed;
-    bottom: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom, 12px));
     left: 50%;
     transform: translateX(-50%);
     z-index: 900;
-    background: rgba(15, 19, 26, 0.95);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(13, 17, 24, 0.94);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 9999px;
     padding: 6px 8px;
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
-    width: calc(100% - 20px);
+    box-shadow: 
+      0 16px 48px rgba(0, 0, 0, 0.55),
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    width: calc(100% - 24px);
     max-width: 540px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    gap: 2px;
+    gap: 3px;
   }
 
   .mobile-bottom-dock::-webkit-scrollbar {
@@ -2703,73 +2756,148 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2px;
-    font-size: 0.60rem;
+    gap: 3px;
+    font-size: 0.62rem;
     font-weight: 700;
-    padding: 5px 8px;
-    border-radius: 12px;
-    transition: all var(--transition-fast);
+    padding: 6px 10px;
+    border-radius: 14px;
+    transition: all var(--spring-bounce);
     flex-shrink: 0;
-    min-width: 50px;
+    min-width: 56px;
     white-space: nowrap;
     cursor: pointer;
+    user-select: none;
   }
 
   .m-dock-item svg {
-    width: 17px;
-    height: 17px;
+    width: 18px;
+    height: 18px;
     transition: all var(--transition-fast);
   }
 
-  .m-dock-item:hover {
+  .m-dock-item:active {
+    transform: scale(0.90);
     color: #ffffff;
   }
 
   .m-dock-item.active {
     color: var(--accent-gold-light);
-    background: rgba(255, 255, 255, 0.10);
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25);
   }
 
   .m-dock-item.active svg {
     stroke: var(--accent-gold-light);
+    transform: translateY(-1px);
   }
 
-  /* Mobile AI Agents Studio Optimization */
+  /* 6. Mobile AI Agents Studio Optimization */
   .agents-buttons-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    margin-bottom: 14px;
+    gap: 10px;
+    margin-bottom: 16px;
   }
 
   .agent-btn-card {
-    padding: 10px 10px;
+    padding: 11px 12px;
     gap: 8px;
-    border-radius: 12px;
+    border-radius: 14px;
+    transition: all var(--spring-bounce);
+  }
+
+  .agent-btn-card:active {
+    transform: scale(0.96);
   }
 
   .agent-btn-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 1.05rem;
-    border-radius: 8px;
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
+    border-radius: 10px;
   }
 
   .agent-btn-title {
-    font-size: 0.78rem;
+    font-size: 0.80rem;
+    font-weight: 800;
+    line-height: 1.2;
   }
 
   .agent-btn-badge {
-    font-size: 0.58rem;
+    font-size: 0.60rem;
+  }
+
+  .agent-chat-card {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
   }
 
   .agent-chat-messages {
-    height: 330px;
-    padding: 14px 12px;
+    height: 340px;
+    padding: 16px 14px;
   }
 
   .chat-bubble {
+    padding: 11px 14px;
+    font-size: 0.84rem;
+    line-height: 1.55;
+    border-radius: 16px;
+  }
+
+  .chat-input-row {
     padding: 10px 12px;
-    font-size: 0.80rem;
+    gap: 8px;
+  }
+
+  .chat-input {
+    padding: 10px 14px;
+    font-size: 0.84rem;
+    border-radius: 9999px;
+  }
+
+  .chat-send-btn {
+    padding: 10px 18px;
+    font-size: 0.82rem;
+    border-radius: 9999px;
+  }
+
+  /* 7. Experience, Education & Timeline Mobile Optimization */
+  .timeline-card,
+  .education-card,
+  .highlight-card {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app-shell {
+    padding: 10px 10px 0 10px;
+  }
+
+  .main-content-card {
+    padding: 20px 14px calc(105px + env(safe-area-inset-bottom, 0px)) 14px;
+    border-radius: 20px;
+  }
+
+  .hero-candidate-name {
+    font-size: 1.65rem;
+  }
+
+  .snapshot-cards-row {
+    gap: 8px;
+  }
+
+  .snapshot-card {
+    padding: 10px 12px;
+  }
+
+  .snapshot-value {
+    font-size: 1.05rem;
+  }
+
+  .agents-buttons-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 }

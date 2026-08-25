@@ -1,0 +1,1101 @@
+/* ==========================================================================
+   SYED HAMZA — FULL-SCREEN CINEMATIC INTERACTIVE PROJECT LIBRARY
+   Aesthetic: Apple TV × Linear × Vercel × Luxury Software Engineering
+   Architecture: 100vw × 100vh Immersive Digital Archive with Dedicated Doorway
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Full-Screen Theater Container & Page Lock
+   -------------------------------------------------------------------------- */
+body.cinema-fullscreen-active {
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #06080d !important;
+  background-image: none !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  display: block !important;
+}
+
+body.cinema-fullscreen-active #resume-app-shell,
+body.cinema-fullscreen-active .app-shell,
+body.cinema-fullscreen-active .mobile-top-header,
+body.cinema-fullscreen-active .mobile-bottom-dock,
+body.cinema-fullscreen-active .sidebar-backdrop,
+body.cinema-fullscreen-active #action-toast {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.projects-experience-root {
+  position: fixed;
+  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 99999;
+  background: #06080d;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+.cinema-theater-container {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 1;
+  background: #06080d;
+  color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  user-select: none;
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  animation: cinemaEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cinema-theater-container.is-exiting {
+  animation: cinemaExit 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cinemaEnter {
+  0% {
+    opacity: 0;
+    transform: scale(1.03);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes cinemaExit {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.97);
+    filter: blur(6px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Dynamic Hero Backdrop & Ambient Lighting
+   -------------------------------------------------------------------------- */
+.cinema-backdrop-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cinema-backdrop-canvas {
+  position: absolute;
+  inset: -5%;
+  width: 110%;
+  height: 110%;
+  opacity: 0.88;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+  filter: saturate(1.2) contrast(1.05);
+}
+
+.cinema-hero-svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Cinematic Dark Overlays, Gradients & Vignettes */
+.cinema-vignette-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(180deg, rgba(6, 8, 13, 0.82) 0%, rgba(6, 8, 13, 0.25) 25%, rgba(6, 8, 13, 0.5) 65%, rgba(6, 8, 13, 0.98) 100%),
+    radial-gradient(ellipse at 80% 25%, transparent 35%, rgba(6, 8, 13, 0.85) 100%),
+    linear-gradient(90deg, rgba(6, 8, 13, 0.92) 0%, rgba(6, 8, 13, 0.4) 45%, rgba(6, 8, 13, 0.15) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cinema-ambient-spotlight {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  top: 5%;
+  right: 12%;
+  background: radial-gradient(circle, var(--project-accent-glow, rgba(194, 149, 56, 0.35)) 0%, transparent 70%);
+  filter: blur(90px);
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 2;
+  transition: background 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: ambientFloat 16s ease-in-out infinite alternate;
+}
+
+@keyframes ambientFloat {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-40px, 30px, 0) scale(1.1); }
+  100% { transform: translate3d(30px, -30px, 0) scale(0.92); }
+}
+
+/* Subtle Film Grain */
+.cinema-grain-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* --------------------------------------------------------------------------
+   3. Top Bar with "← Back to Resume" Navigation
+   -------------------------------------------------------------------------- */
+.cinema-top-bar {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 48px 12px 48px;
+}
+
+.cinema-top-left-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Subtle, Elegant "← Back to Resume" Button */
+.btn-back-to-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  color: #cbd5e1;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.82rem; /* 13-14px refined typography */
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all var(--spring-bounce);
+  text-decoration: none;
+  user-select: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.btn-back-to-resume .back-arrow {
+  display: inline-block;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #94a3b8;
+}
+
+.btn-back-to-resume:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+.btn-back-to-resume:hover .back-arrow {
+  color: #ffffff;
+  transform: translateX(-3px);
+}
+
+.btn-back-to-resume:active {
+  transform: translateY(0);
+}
+
+/* Breadcrumb Eyebrow */
+.cinema-section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-gold-light, #dfb55e);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.cinema-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--project-accent, var(--accent-gold));
+  box-shadow: 0 0 10px var(--project-accent, var(--accent-gold));
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.8); }
+}
+
+.cinema-top-right-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cinema-keyboard-hint {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #64748b;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cinema-counter-badge {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #94a3b8;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.cinema-counter-badge span.current {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+/* --------------------------------------------------------------------------
+   4. Center Hero Project Stage (Focal Point)
+   -------------------------------------------------------------------------- */
+.cinema-hero-stage {
+  position: relative;
+  z-index: 10;
+  padding: 0 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 960px;
+  flex: 1;
+}
+
+.cinema-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinema-hero-content.is-transitioning {
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+}
+
+.cinema-project-number-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cinema-huge-num {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--project-accent, #c29538);
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+}
+
+.cinema-project-category {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.cinema-project-title {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  color: #ffffff;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.85);
+}
+
+.cinema-project-tagline {
+  font-size: 1.12rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  max-width: 780px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  font-weight: 400;
+}
+
+/* Technology Pills Cloud */
+.cinema-tech-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.cinema-tech-chip {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  color: #e2e8f0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all var(--transition-fast);
+}
+
+.cinema-tech-chip:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Hero Action CTA Row */
+.cinema-action-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.btn-cinema-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--project-accent-grad, var(--accent-gold-grad));
+  color: #07090e;
+  border: none;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.90rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all var(--spring-bounce);
+  box-shadow: 0 8px 28px var(--project-accent-glow, rgba(194, 149, 56, 0.45));
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cinema-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn-cinema-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 36px var(--project-accent-glow, rgba(194, 149, 56, 0.65));
+}
+
+.btn-cinema-primary:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-cinema-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-cinema-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 13px 24px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all var(--spring-bounce);
+}
+
+.btn-cinema-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.btn-cinema-secondary:active {
+  transform: translateY(0);
+}
+
+/* Quick Metrics Row */
+.cinema-metrics-strip {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 10px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  max-width: 780px;
+}
+
+.cinema-metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.cinema-metric-val {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.cinema-metric-lbl {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* --------------------------------------------------------------------------
+   5. Bottom Horizontal Project Shelf
+   -------------------------------------------------------------------------- */
+.cinema-shelf-section {
+  position: relative;
+  z-index: 20;
+  padding: 22px 48px 34px 48px;
+  background: linear-gradient(180deg, transparent 0%, rgba(5, 7, 11, 0.85) 35%, rgba(5, 7, 11, 0.98) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.cinema-shelf-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.cinema-shelf-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.cinema-shelf-arrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cinema-shelf-arrow-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--spring-bounce);
+  backdrop-filter: blur(8px);
+}
+
+.cinema-shelf-arrow-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.cinema-shelf-arrow-btn:active {
+  transform: scale(0.95);
+}
+
+/* Horizontal Track */
+.cinema-shelf-track {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 4px 14px 4px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cinema-shelf-track::-webkit-scrollbar {
+  height: 4px;
+}
+
+.cinema-shelf-track::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 9999px;
+}
+
+.cinema-shelf-track::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+
+.cinema-shelf-track::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* Individual Shelf Card */
+.cinema-shelf-card {
+  flex: 0 0 240px;
+  height: 125px;
+  border-radius: 18px;
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  padding: 15px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.65;
+  transform: scale(0.96);
+  backdrop-filter: blur(12px);
+}
+
+.cinema-shelf-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, var(--card-accent, rgba(194, 149, 56, 0.18)), transparent 70%);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.cinema-shelf-card:hover {
+  opacity: 0.95;
+  transform: scale(1) translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.32);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+}
+
+/* Active Selected Shelf Card */
+.cinema-shelf-card.is-active {
+  opacity: 1;
+  transform: scale(1.05) translateY(-6px);
+  border-color: var(--card-accent, var(--accent-gold));
+  box-shadow: 
+    0 16px 40px rgba(0, 0, 0, 0.75),
+    0 0 24px var(--card-glow, rgba(194, 149, 56, 0.4)),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  background: #141a24;
+}
+
+.cinema-shelf-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.cinema-card-num {
+  font-family: var(--font-mono);
+  font-size: 0.80rem;
+  font-weight: 800;
+  color: var(--card-accent, #c29538);
+}
+
+.cinema-card-cat-badge {
+  font-family: var(--font-mono);
+  font-size: 0.60rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.cinema-shelf-card-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+.cinema-card-title {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cinema-card-role {
+  font-size: 0.70rem;
+  color: #94a3b8;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cinema-card-active-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-accent, var(--accent-gold));
+  border-radius: 3px 3px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cinema-shelf-card.is-active .cinema-card-active-indicator {
+  opacity: 1;
+  box-shadow: 0 0 12px var(--card-accent, var(--accent-gold));
+}
+
+/* --------------------------------------------------------------------------
+   6. Case Study Deep-Dive Modal Drawer
+   -------------------------------------------------------------------------- */
+.cinema-case-study-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 5, 8, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: 100005;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinema-case-study-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cinema-case-study-modal {
+  width: 100%;
+  max-width: 920px;
+  max-height: 88vh;
+  background: #0d1118;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  box-shadow: 
+    0 40px 120px -20px rgba(0, 0, 0, 0.95),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(30px) scale(0.97);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #f1f5f9;
+}
+
+.cinema-case-study-backdrop.is-open .cinema-case-study-modal {
+  transform: translateY(0) scale(1);
+}
+
+.cinema-modal-header {
+  padding: 24px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(18, 24, 34, 0.85);
+}
+
+.cinema-modal-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cinema-modal-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--modal-accent, #c29538);
+  text-transform: uppercase;
+}
+
+.cinema-modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.cinema-modal-close-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all var(--spring-bounce);
+}
+
+.cinema-modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  transform: rotate(90deg) scale(1.1);
+}
+
+.cinema-modal-body {
+  padding: 36px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.cinema-modal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cinema-modal-section-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--modal-accent, #c29538);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cinema-modal-text {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+}
+
+.cinema-modal-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+.cinema-modal-bullets li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 0.90rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.cinema-modal-bullets li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--modal-accent, #c29538);
+  font-weight: 800;
+}
+
+.cinema-code-preview {
+  background: #05070c;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 20px 22px;
+  font-family: var(--font-mono);
+  font-size: 0.80rem;
+  line-height: 1.55;
+  color: #38bdf8;
+  overflow-x: auto;
+}
+
+.cinema-modal-footer {
+  padding: 20px 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(14, 18, 26, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --------------------------------------------------------------------------
+   7. Responsive Design & Touch Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .cinema-top-bar {
+    padding: 20px 32px 10px 32px;
+  }
+  .cinema-hero-stage {
+    padding: 0 32px;
+  }
+  .cinema-project-title {
+    font-size: 2.5rem;
+  }
+  .cinema-shelf-section {
+    padding: 18px 32px 24px 32px;
+  }
+  .cinema-shelf-card {
+    flex: 0 0 200px;
+    height: 115px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cinema-top-bar {
+    padding: max(16px, env(safe-area-inset-top, 16px)) 20px 10px 20px;
+  }
+  .cinema-keyboard-hint {
+    display: none;
+  }
+  .cinema-section-eyebrow {
+    display: none;
+  }
+  .btn-back-to-resume {
+    padding: 8px 14px;
+    font-size: 0.80rem;
+  }
+  .cinema-hero-stage {
+    padding: 0 20px;
+    justify-content: flex-start;
+    padding-top: 10px;
+  }
+  .cinema-huge-num {
+    font-size: 0.95rem;
+    padding: 3px 8px;
+  }
+  .cinema-project-category {
+    font-size: 0.68rem;
+  }
+  .cinema-project-title {
+    font-size: clamp(1.65rem, 6vw, 2.2rem);
+    line-height: 1.15;
+  }
+  .cinema-project-tagline {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .cinema-tech-chip {
+    font-size: 0.68rem;
+    padding: 4px 10px;
+  }
+  .cinema-action-row {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+  }
+  .btn-cinema-primary {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 0.88rem;
+  }
+  .btn-cinema-secondary {
+    flex: 1;
+    min-width: 130px;
+    justify-content: center;
+    padding: 11px 16px;
+    font-size: 0.82rem;
+  }
+  
+  /* Mobile 2x2 Clean Metrics Grid */
+  .cinema-metrics-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding-top: 12px;
+    margin-top: 6px;
+    width: 100%;
+  }
+  .cinema-metric-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 12px;
+    padding: 8px 12px;
+  }
+  .cinema-metric-val {
+    font-size: 0.96rem;
+  }
+  .cinema-metric-lbl {
+    font-size: 0.62rem;
+  }
+
+  /* Mobile Bottom Shelf */
+  .cinema-shelf-section {
+    padding: 12px 20px calc(14px + env(safe-area-inset-bottom, 0px)) 20px;
+  }
+  .cinema-shelf-header {
+    margin-bottom: 8px;
+  }
+  .cinema-shelf-card {
+    flex: 0 0 165px;
+    height: 102px;
+    padding: 11px 13px;
+    border-radius: 14px;
+  }
+  .cinema-card-title {
+    font-size: 0.86rem;
+  }
+  .cinema-card-role {
+    font-size: 0.65rem;
+  }
+
+  /* Mobile Case Study Modal as Luxury Bottom Sheet */
+  .cinema-case-study-backdrop {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .cinema-case-study-modal {
+    width: 100%;
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: 24px 24px 0 0;
+    margin: 0;
+  }
+  .cinema-modal-header {
+    padding: 18px 20px;
+  }
+  .cinema-modal-title {
+    font-size: 1.25rem;
+  }
+  .cinema-modal-body {
+    padding: 20px 20px 24px 20px;
+    gap: 20px;
+  }
+  .cinema-modal-text {
+    font-size: 0.88rem;
+  }
+  .cinema-modal-bullets li {
+    font-size: 0.84rem;
+  }
+  .cinema-modal-footer {
+    padding: 16px 20px calc(16px + env(safe-area-inset-bottom, 0px)) 20px;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  .cinema-modal-footer > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cinema-modal-footer .btn-cinema-primary,
+  .cinema-modal-footer .btn-cinema-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 18px;
+    font-size: 0.84rem;
+  }
+  #cinema-modal-footer-close-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cinema-top-bar {
+    padding: max(14px, env(safe-area-inset-top, 14px)) 16px 8px 16px;
+  }
+  .cinema-hero-stage {
+    padding: 0 16px;
+  }
+  .cinema-shelf-section {
+    padding: 10px 16px calc(12px + env(safe-area-inset-bottom, 0px)) 16px;
+  }
+  .cinema-shelf-card {
+    flex: 0 0 150px;
+    height: 95px;
+    padding: 10px 12px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Reduced Motion Accessibility Mode
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .cinema-theater-container,
+  .cinema-ambient-spotlight,
+  .cinema-hero-content,
+  .cinema-shelf-card,
+  .cinema-case-study-modal {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -127,6 +127,15 @@
         tags: ['React', 'Next.js', 'TypeScript', 'AI APIs', 'Supabase', 'Vercel']
       },
       {
+        id: 'orba',
+        name: 'ORBA Social Platform',
+        category: 'Real-Time Social Network',
+        year: '2024 – 2025',
+        role: 'Creator & Full-Stack Architect',
+        description: 'Next-generation real-time social media platform where conversations orbit people, featuring live activity feeds, user profile orbits, and OAuth 2.0 PKCE authentication with Supabase.',
+        tags: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'OAuth PKCE', 'WebSockets']
+      },
+      {
         id: 'neuralforge',
         name: 'NeuralForge',
         category: 'Workflow Engine & Developer Tools',
@@ -245,6 +254,10 @@
   };
 
   const mainContentEl = document.getElementById('main-content-container');
+  const cinemaRootEl = document.getElementById('projects-cinema-root');
+  const resumeShellEl = document.getElementById('resume-app-shell');
+  const mobileHeaderEl = document.querySelector('.mobile-top-header');
+  const mobileDockEl = document.querySelector('.mobile-bottom-dock');
 
   function initRouter() {
     window.addEventListener('hashchange', handleRoute);
@@ -255,11 +268,77 @@
     }
   }
 
+  let lastResumeRoute = '#/resume';
+
   function handleRoute() {
-    const hash = window.location.hash || '#/resume';
-    const renderFn = ROUTES[hash] || renderOverviewPage;
-    
-    updateActiveNavStates(hash);
+    const rawHash = window.location.hash || '#/resume';
+    const baseHash = rawHash.split('?')[0] || '#/resume';
+
+    // ========================================================================
+    // MODE 1: FULL-SCREEN CINEMATIC PROJECTS EXPERIENCE
+    // ========================================================================
+    if (baseHash === '#/resume/projects') {
+      document.body.classList.add('cinema-fullscreen-active');
+      document.body.style.overflow = 'hidden';
+
+      if (resumeShellEl) resumeShellEl.style.display = 'none';
+      if (mobileHeaderEl) mobileHeaderEl.style.display = 'none';
+      if (mobileDockEl) mobileDockEl.style.display = 'none';
+
+      if (cinemaRootEl) {
+        cinemaRootEl.style.display = 'block';
+        cinemaRootEl.setAttribute('aria-hidden', 'false');
+
+        if (window.CinematicProjects && typeof window.CinematicProjects.init === 'function') {
+          window.CinematicProjects.init(cinemaRootEl);
+
+          // Support deep-link query parameter (e.g. #/resume/projects?view=orba)
+          if (rawHash.includes('view=')) {
+            const queryStr = rawHash.split('?')[1] || '';
+            const params = new URLSearchParams(queryStr);
+            const viewId = params.get('view');
+            if (viewId && window.PROJECTS_DATA) {
+              const projIndex = window.PROJECTS_DATA.findIndex(p => p.id === viewId);
+              if (projIndex !== -1) {
+                window.CinematicProjects.selectProject(projIndex);
+                window.CinematicProjects.openCaseStudyModal(window.PROJECTS_DATA[projIndex]);
+              }
+            }
+          }
+        }
+      }
+      return;
+    }
+
+    // ========================================================================
+    // MODE 2: STANDARD RESUME APPLICATION OS
+    // ========================================================================
+    if (document.body.classList.contains('cinema-fullscreen-active')) {
+      document.body.classList.remove('cinema-fullscreen-active');
+      document.body.style.overflow = '';
+    }
+
+    if (cinemaRootEl) {
+      cinemaRootEl.style.display = 'none';
+      cinemaRootEl.setAttribute('aria-hidden', 'true');
+      cinemaRootEl.innerHTML = '';
+    }
+
+    if (resumeShellEl) resumeShellEl.style.display = '';
+    if (mobileHeaderEl) mobileHeaderEl.style.display = '';
+    if (mobileDockEl) mobileDockEl.style.display = '';
+
+    // Remember this route as the return destination
+    lastResumeRoute = baseHash;
+    if (window.CinematicProjects && typeof window.CinematicProjects.setLastResumeRoute === 'function') {
+      window.CinematicProjects.setLastResumeRoute(lastResumeRoute);
+    }
+    if (window.CinematicProjects && typeof window.CinematicProjects.cleanup === 'function') {
+      window.CinematicProjects.cleanup();
+    }
+
+    updateActiveNavStates(baseHash);
+    const renderFn = ROUTES[baseHash] || renderOverviewPage;
     renderFn();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
@@ -606,46 +685,38 @@
     `;
   }
 
-  // --- 3. PROJECTS PAGE ---
+  // --- 3. PROJECTS PAGE (Cinematic Interactive Library) ---
   function renderProjectsPage() {
     if (!mainContentEl) return;
 
-    mainContentEl.innerHTML = `
-      <div class="subpage-container">
-        <div class="subpage-header">
-          <div>
+    if (window.CinematicProjects && typeof window.CinematicProjects.init === 'function') {
+      window.CinematicProjects.init(mainContentEl);
+
+      // Support deep-link query parameter (e.g. #/resume/projects?view=orba)
+      const rawHash = window.location.hash || '';
+      if (rawHash.includes('view=')) {
+        const queryStr = rawHash.split('?')[1] || '';
+        const params = new URLSearchParams(queryStr);
+        const viewId = params.get('view');
+        if (viewId && window.PROJECTS_DATA) {
+          const projIndex = window.PROJECTS_DATA.findIndex(p => p.id === viewId);
+          if (projIndex !== -1) {
+            window.CinematicProjects.selectProject(projIndex);
+            window.CinematicProjects.openCaseStudyModal(window.PROJECTS_DATA[projIndex]);
+          }
+        }
+      }
+    } else {
+      // Fallback
+      mainContentEl.innerHTML = `
+        <div class="subpage-container">
+          <div class="subpage-header">
             <h2 class="subpage-title">Selected Projects</h2>
             <p class="subpage-subtitle">Production platforms & technical case studies</p>
           </div>
         </div>
-
-        <div class="projects-grid">
-          ${resumeData.projects.map(p => `
-            <div class="project-card-full">
-              <div>
-                <div class="proj-top-meta">
-                  <span class="proj-category-pill">${p.category}</span>
-                  <span class="proj-year">${p.year}</span>
-                </div>
-                <h3 class="proj-name" style="margin-top:8px;">${p.name}</h3>
-                <div style="font-size:0.78rem; font-weight:700; color:var(--accent-gold-dark); margin-bottom:8px;">${p.role}</div>
-                <p class="proj-desc">${p.description}</p>
-              </div>
-
-              <div>
-                <div class="proj-tags-row" style="margin-bottom:12px;">
-                  ${p.tags.map(t => `<span class="proj-tag-chip">${t}</span>`).join('')}
-                </div>
-                <div class="proj-btn-row">
-                  <button class="btn-sidebar-dark" onclick="window.location.hash='#/resume/engineering'">Overview →</button>
-                  <button class="btn-sidebar-light" onclick="window.location.hash='#/resume/engineering'">Deep Dive →</button>
-                </div>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    `;
+      `;
+    }
   }
 
   // --- 4. EXPERIENCE PAGE ---
