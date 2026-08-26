@@ -188,17 +188,26 @@
       },
       {
         id: 'auralis',
-        name: 'Auralis Studio',
-        category: 'AI Platform & Web Experience',
+        name: 'Auralis Atmosphere Engine',
+        category: 'AI Experience Platform',
         year: '2024 – 2025',
         role: 'Architect & Full-Stack Builder (AI-Native Workflow)',
         description: 'AI-powered generative digital experience platform featuring streaming token ingestion, Supabase PostgreSQL with RLS, and automated Edge deployment on Vercel.',
         tags: ['React', 'Next.js', 'TypeScript', 'AI APIs', 'Supabase', 'Vercel']
       },
       {
+        id: 'auralis-hospital',
+        name: 'Auralis Hospital Platform',
+        category: 'Hospital Digital Platform',
+        year: '2026',
+        role: 'Product Architect & AI-Native Full-Stack Builder',
+        description: 'Comprehensive digital hospital platform connecting patients, doctors, departments, appointments, emergency services, and hospital operations into one unified system.',
+        tags: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS 4', 'GSAP', 'Framer Motion']
+      },
+      {
         id: 'neuralforge',
-        name: 'NeuralForge',
-        category: 'Workflow Engine & Developer Tools',
+        name: 'NeuralForge Workflow Engine',
+        category: 'Autonomous Workflows & Tools',
         year: '2024',
         role: 'Full-Stack & Systems Engineer',
         description: 'Developer workflow engine and operational dashboard coordinating task graphs with in-memory semantic vector cache and AI integrations.',
@@ -212,6 +221,15 @@
         role: 'Electronics & Software Integration Engineer',
         description: 'Microcontroller sensor sampling loop in C++ transmitting data over WebSockets into a real-time 60FPS HTML5 Canvas oscilloscope interface.',
         tags: ['C++', 'Embedded C', 'Node.js', 'WebSockets', 'Digital Electronics', 'Canvas API']
+      },
+      {
+        id: 'equraishi',
+        name: 'E-Quraishi Diagnostic AI',
+        category: 'Clinical & Healthcare AI',
+        year: '2024',
+        role: 'Biomedical AI Systems Engineer',
+        description: 'Clinical diagnostic reasoning and biomedical literature synthesis engine for differential diagnosis and pharmacology verification.',
+        tags: ['Clinical AI', 'ICD-10', 'Vector Search', 'Drug Graphs', 'Next.js', 'Supabase']
       }
     ],
 

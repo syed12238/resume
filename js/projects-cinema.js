@@ -28,6 +28,22 @@
   }
 
   /**
+   * Shows a sleek toast notification inside cinema mode.
+   */
+  function showCinemaToast(message) {
+    const toast = document.getElementById('cinema-toast');
+    const toastText = document.getElementById('cinema-toast-text');
+    if (!toast) return;
+    if (toastText) toastText.textContent = message || 'Coming Soon — Live platform demo is currently in active development.';
+    toast.classList.add('is-visible');
+    
+    if (toast._timer) clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => {
+      toast.classList.remove('is-visible');
+    }, 2800);
+  }
+
+  /**
    * Initializes the Full-Screen Cinematic Projects Theater.
    */
   function initCinematicProjects(mountElement) {
@@ -45,6 +61,7 @@
 
     const data = window.PROJECTS_DATA;
     const initialProject = data[currentProjectIndex] || data[0];
+    const isInitialSoon = initialProject.isComingSoon || !initialProject.links.live;
 
     // 2. Build Full-Screen Theater UI
     mountElement.innerHTML = `
@@ -103,12 +120,15 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </button>
 
-              ${initialProject.links.live ? `
-                <a href="${initialProject.links.live}" target="_blank" rel="noopener noreferrer" class="btn-cinema-secondary" id="cinema-live-demo-btn">
-                  <span>OPEN</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-              ` : ''}
+              <a href="${isInitialSoon ? 'javascript:void(0)' : initialProject.links.live}" 
+                 ${isInitialSoon ? '' : 'target="_blank" rel="noopener noreferrer"'} 
+                 class="btn-cinema-secondary" 
+                 id="cinema-live-demo-btn" 
+                 data-coming-soon="${isInitialSoon ? 'true' : 'false'}">
+                <span>OPEN</span>
+                ${isInitialSoon ? '<span class="cinema-soon-tag">SOON</span>' : ''}
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
             </div>
 
             <div class="cinema-metrics-strip" id="cinema-hero-metrics">
@@ -171,6 +191,12 @@
           </div>
         </div>
 
+        <!-- 6. Cinema Toast Notification -->
+        <div class="cinema-toast" id="cinema-toast" aria-live="polite">
+          <span class="cinema-toast-icon">⚡</span>
+          <span class="cinema-toast-text" id="cinema-toast-text">Coming Soon — Live platform demo is currently in active development.</span>
+        </div>
+
       </div>
     `;
 
@@ -189,6 +215,7 @@
     const backBtn = document.getElementById('cinema-back-to-resume-btn');
     const caseStudyBtn = document.getElementById('cinema-view-case-study-btn');
     const modalBackdrop = document.getElementById('cinema-case-study-modal-backdrop');
+    const liveBtn = document.getElementById('cinema-live-demo-btn');
 
     // 1. "← Back to Resume" Button Click
     if (backBtn) {
@@ -238,7 +265,18 @@
       });
     }
 
-    // 5. Modal Backdrop Click (to close)
+    // 5. Open / Live Demo Button Click
+    if (liveBtn) {
+      liveBtn.addEventListener('click', (e) => {
+        const isSoon = liveBtn.getAttribute('data-coming-soon') === 'true';
+        if (isSoon) {
+          e.preventDefault();
+          showCinemaToast('✨ Coming Soon — Live platform demo is currently in active development.');
+        }
+      });
+    }
+
+    // 6. Modal Backdrop Click (to close)
     if (modalBackdrop) {
       modalBackdrop.addEventListener('click', (e) => {
         if (e.target === modalBackdrop) {
@@ -247,7 +285,7 @@
       });
     }
 
-    // 6. Global Keyboard Controller
+    // 7. Global Keyboard Controller
     keydownHandler = (e) => {
       const modalOpen = modalBackdrop && modalBackdrop.classList.contains('is-open');
       if (modalOpen) {
@@ -280,7 +318,7 @@
 
     window.addEventListener('keydown', keydownHandler);
 
-    // 7. Touch Swipe Detection
+    // 8. Touch Swipe Detection
     if (theater) {
       theater.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
@@ -425,8 +463,27 @@
       }
 
       if (liveBtn) {
-        liveBtn.href = proj.links.live || '#';
-        liveBtn.style.display = proj.links.live ? 'inline-flex' : 'none';
+        const isSoon = proj.isComingSoon || !proj.links.live;
+        liveBtn.setAttribute('data-coming-soon', isSoon ? 'true' : 'false');
+        if (isSoon) {
+          liveBtn.href = 'javascript:void(0)';
+          liveBtn.removeAttribute('target');
+          liveBtn.removeAttribute('rel');
+          liveBtn.innerHTML = `
+            <span>OPEN</span>
+            <span class="cinema-soon-tag">SOON</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          `;
+        } else {
+          liveBtn.href = proj.links.live;
+          liveBtn.target = '_blank';
+          liveBtn.rel = 'noopener noreferrer';
+          liveBtn.innerHTML = `
+            <span>OPEN</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          `;
+        }
+        liveBtn.style.display = 'inline-flex';
       }
 
       if (heroContent) {
@@ -447,6 +504,8 @@
     const modalBackdrop = document.getElementById('cinema-case-study-modal-backdrop');
     const modalContent = document.getElementById('cinema-case-study-modal-content');
     if (!modalBackdrop || !modalContent || !proj) return;
+
+    const isSoon = proj.isComingSoon || !proj.links.live;
 
     modalContent.style.setProperty('--modal-accent', proj.accentColor);
     modalContent.innerHTML = `
@@ -507,7 +566,13 @@
 
       <div class="cinema-modal-footer">
         <div style="display:flex; gap:10px;">
-          ${proj.links.live ? `<a href="${proj.links.live}" target="_blank" rel="noopener noreferrer" class="btn-cinema-primary" style="padding:10px 18px; font-size:0.80rem;">Open Live Platform ↗</a>` : ''}
+          ${!isSoon ? `
+            <a href="${proj.links.live}" target="_blank" rel="noopener noreferrer" class="btn-cinema-primary" style="padding:10px 18px; font-size:0.80rem;">Open Live Platform ↗</a>
+          ` : `
+            <button class="btn-cinema-primary" id="cinema-modal-coming-soon-btn" style="padding:10px 18px; font-size:0.80rem;">
+              <span>Open Live Platform (Coming Soon)</span>
+            </button>
+          `}
         </div>
         <button class="btn-cinema-secondary" id="cinema-modal-footer-close-btn" style="padding:10px 18px; font-size:0.80rem;">Close</button>
       </div>
@@ -519,8 +584,15 @@
 
     const closeBtn = document.getElementById('cinema-modal-close-btn');
     const footerCloseBtn = document.getElementById('cinema-modal-footer-close-btn');
+    const modalSoonBtn = document.getElementById('cinema-modal-coming-soon-btn');
+
     if (closeBtn) closeBtn.addEventListener('click', closeCaseStudyModal);
     if (footerCloseBtn) footerCloseBtn.addEventListener('click', closeCaseStudyModal);
+    if (modalSoonBtn) {
+      modalSoonBtn.addEventListener('click', () => {
+        showCinemaToast('✨ Coming Soon — Live platform demo is currently in active development.');
+      });
+    }
   }
 
   /**
